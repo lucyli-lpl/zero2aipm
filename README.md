@@ -6,7 +6,7 @@ An interactive course that teaches you to move into AI product management by doi
 
 It is built from a real path: in March 2026 a fintech product manager with a career gap stopped reading about AI, shipped three small AI products in a few weeks, and had an AI product manager offer six weeks later. This course is that path, cleaned up so you can walk it faster.
 
-**Website:** <https://lucyli-lpl.github.io/zero2aipm/>
+**Website:** <https://zero2aipm.vercel.app> (mirror: <https://lucyli-lpl.github.io/zero2aipm/>)
 
 ## What makes it different
 
@@ -61,7 +61,7 @@ templates/      starter files for your learning log, glossary, decision records,
 AGENTS.md       tutor instructions for any coding agent (CLAUDE.md and GEMINI.md point to it)
 TUTOR_PROMPT.md paste-in prompt for chat apps
 site/           website source (run: python3 site/build.py)
-docs/           built website, served by GitHub Pages
+docs/           built website, deployed by Vercel and GitHub Pages
 skills/         companion skills for resumes and interviews (coming)
 ```
 

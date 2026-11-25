@@ -6,7 +6,7 @@
 
 它来自一条真实的路径：2026 年 3 月，一个有空窗期的金融科技产品经理不再只是读 AI 文章，而是用几周时间做出并上线了三个小 AI 产品，六周后拿到了 AI 产品经理的 offer。这门课就是那条路，整理过后让你走得更快。
 
-**课程网站：** <https://lucyli-lpl.github.io/zero2aipm/>
+**课程网站：** <https://zero2aipm.vercel.app>（镜像：<https://lucyli-lpl.github.io/zero2aipm/>）
 
 ## 它有什么不同
 
@@ -61,7 +61,7 @@ templates/      学习日志、名词库、决策记录、评测集、拆解和�
 AGENTS.md       给任何编程 Agent 的导师说明（CLAUDE.md 和 GEMINI.md 都指向它）
 TUTOR_PROMPT.md 聊天 App 用的提示词
 site/           网站源码（运行：python3 site/build.py）
-docs/           生成的网站，由 GitHub Pages 发布
+docs/           生成的网站，由 Vercel 和 GitHub Pages 发布
 skills/         简历和面试的配套 skill（即将加入）
 ```
 
