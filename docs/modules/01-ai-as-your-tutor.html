@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>01 · AI as Your Tutor · zero2aipm</title>
+<meta name="description" content="Learn any new concept by rebuilding the problem it solves, then let the AI test you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html">zero2aipm</a>
+  <nav class="topnav">
+    <a href="https://github.com/lucyli-lpl/zero2aipm" class="ghost">GitHub</a>
+    <a href="../../zh/modules/01-ai-as-your-tutor.html" class="lang-switch" data-lang="zh">中文</a>
+  </nav>
+</header>
+<main class="module-layout">
+<aside class="sidebar">
+  <a class="back" href="../index.html">Home</a>
+  <p class="side-title">Modules</p>
+  <ol><li><a href="00-start-here.html"><span>00</span><em>Start Here</em></a></li><li class="active"><a href="01-ai-as-your-tutor.html"><span>01</span><em>AI as Your Tutor</em></a></li><li><a href="02-build-your-map.html"><span>02</span><em>Build Your Map</em></a></li><li><a href="03-ship-in-week-one.html"><span>03</span><em>Ship in Week One</em></a></li><li><a href="04-learn-the-methods.html"><span>04</span><em>Learn the Methods Through Your Project</em></a></li><li><a href="05-chase-a-trend.html"><span>05</span><em>Chase a Trend Without Drowning</em></a></li><li><a href="06-industry-crash-course.html"><span>06</span><em>Industry Crash Course</em></a></li><li><a href="07-record-and-distill.html"><span>07</span><em>Record and Distill</em></a></li><li><a href="08-into-the-job-hunt.html"><span>08</span><em>Into the Job Hunt</em></a></li></ol>
+</aside>
+<article class="lesson">
+  <p class="eyebrow">Module 01</p>
+  <h1>AI as Your Tutor</h1>
+  <p class="lede">Learn any new concept by rebuilding the problem it solves, then let the AI test you.</p>
+  <dl class="meta"><dt>Time</dt><dd>1 hour</dd><dt>You leave with</dt><dd>Three concepts learned the reconstruct way, each with a self-test</dd></dl>
+  <div class="claude-note">Do this module with Claude: open the repository in Claude Code and type <code>start the course</code> or <code>continue</code>.</div>
+  <h2>Why this module</h2>
+<p>You will meet a new AI term almost every day: RAG, MCP, harness, context engineering, whatever arrives next month. Memorizing definitions does not hold up. A definition tells you what something is called. It does not tell you why it exists, so the next variant with a new name looks like a new thing to learn from scratch.</p>
+<p>The fastest learning partner you have is the AI itself. Most people use it as a search engine that answers questions. Used well, it is a tutor that explains, checks your understanding and points out where you are wrong.</p>
+<h2>The method: reconstruct, then get tested</h2>
+<p><strong>Step 1. Go back to the world before the concept existed.</strong> Ask: what were people trying to do, what went wrong, and what constraints made the obvious fixes fail? Then derive the concept as if it had not been invented yet.</p>
+<p>Example with RAG:</p>
+<ul>
+<li>Before: a language model only knows what was in its training data, which stops at some date and never includes your company's documents.</li>
+<li>Obvious fix 1: retrain the model on your documents. Too slow and too expensive to repeat every time a document changes.</li>
+<li>Obvious fix 2: paste every document into the prompt. The prompt has a size limit, and long prompts get slow, costly and less accurate.</li>
+<li>So you need a way to find only the few passages relevant to this question, and put just those into the prompt. That is retrieval-augmented generation.</li>
+</ul>
+<p>Once you have rebuilt it this way, follow-up ideas stop being new vocabulary. "Hybrid retrieval", "reranking" and "chunking strategy" are all answers to "the retrieval step finds the wrong passages", a problem you already understand.</p>
+<p><strong>Step 2. Ask the AI to explain it this way.</strong> A prompt that works:</p>
+<blockquote>
+<p>Teach me [concept] the reconstruct way. Start from the world before it existed. What problem were people facing, what did they try first, and why did that fail? Then derive [concept] step by step. Use one concrete example. Keep it under 400 words.</p>
+</blockquote>
+<p><strong>Step 3. Have it test you.</strong> Right after, ask for a short quiz: two multiple-choice questions, one short-answer question, and one question that applies the concept to a product you know. Answer without looking back. The questions you miss are the ones to revisit.</p>
+<p><strong>Step 4. Put it in your own words.</strong> Add one line to your glossary in plain language, as you would explain it to a friend. If you cannot, you have not finished.</p>
+<h2>Habits that make the AI a better tutor</h2>
+<ul>
+<li><strong>Tell it who you are.</strong> "I am a product manager with no engineering background" changes the explanation a lot.</li>
+<li><strong>Ask for one example, not five.</strong> One worked example teaches more than a list.</li>
+<li><strong>Push back.</strong> If an explanation feels too smooth, ask "what is the strongest argument that this approach is wrong?" or "where does this break in practice?"</li>
+<li><strong>Ask what changed recently.</strong> Models do not know everything that happened after their training. For anything current, ask the AI to search, or check a recent source yourself.</li>
+</ul>
+<h2>Exercise</h2>
+<ol>
+<li>Pick three terms you have seen but could not explain. If you have none, use: context window, function calling, evals.</li>
+<li>For each one, ask Claude to teach it the reconstruct way (Claude in this course does this by default).</li>
+<li>Take the quiz Claude gives you after each one. Write your answers before asking for the correct ones.</li>
+<li>Add each term to <code>my-journey/glossary.md</code> in one or two plain sentences, with the date.</li>
+<li>Log the session in your learning log.</li>
+</ol>
+<h2>Check yourself</h2>
+<ul>
+<li>For one of your three terms, can you name the problem it solves without using the term itself?</li>
+<li>Which quiz question did you miss, and why?</li>
+<li>What would make one of your three concepts obsolete? (If you can answer this, you understand it.)</li>
+</ul>
+<h2>From my journey</h2>
+<p>Early on I learned terms by watching plain-language explainer videos and copying definitions into a document. It helped me read reports, but I forgot most of it within weeks. The concepts that stayed were the ones I had to use in a project or rebuild from the problem. Later I made "teach me the reconstruct way" my default way of asking about anything new.</p>
+  <nav class="prevnext"><a class="pn prev" href="00-start-here.html"><small>Previous</small>Start Here</a><a class="pn next" href="02-build-your-map.html"><small>Next</small>Build Your Map</a></nav>
+</article>
+</main>
+<footer class="footer">
+  <p>By Lucy Li, AI product manager. <a href="https://github.com/lucyli-lpl">@lucyli-lpl</a> · <a href="https://github.com/lucyli-lpl/zero2aipm">github.com/lucyli-lpl/zero2aipm</a></p>
+</footer>
+<script>
+document.querySelectorAll('.lang-switch').forEach(function (a) {
+  a.addEventListener('click', function () {
+    try { localStorage.setItem('z2a-lang', a.dataset.lang); } catch (e) {}
+  });
+});
+</script>
+</body>
+</html>

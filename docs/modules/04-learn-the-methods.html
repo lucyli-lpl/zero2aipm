@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>04 · Learn the Methods Through Your Project · zero2aipm</title>
+<meta name="description" content="Study evals, error analysis, capability boundaries, context and agent design, always against a product you built.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html">zero2aipm</a>
+  <nav class="topnav">
+    <a href="https://github.com/lucyli-lpl/zero2aipm" class="ghost">GitHub</a>
+    <a href="../../zh/modules/04-learn-the-methods.html" class="lang-switch" data-lang="zh">中文</a>
+  </nav>
+</header>
+<main class="module-layout">
+<aside class="sidebar">
+  <a class="back" href="../index.html">Home</a>
+  <p class="side-title">Modules</p>
+  <ol><li><a href="00-start-here.html"><span>00</span><em>Start Here</em></a></li><li><a href="01-ai-as-your-tutor.html"><span>01</span><em>AI as Your Tutor</em></a></li><li><a href="02-build-your-map.html"><span>02</span><em>Build Your Map</em></a></li><li><a href="03-ship-in-week-one.html"><span>03</span><em>Ship in Week One</em></a></li><li class="active"><a href="04-learn-the-methods.html"><span>04</span><em>Learn the Methods Through Your Project</em></a></li><li><a href="05-chase-a-trend.html"><span>05</span><em>Chase a Trend Without Drowning</em></a></li><li><a href="06-industry-crash-course.html"><span>06</span><em>Industry Crash Course</em></a></li><li><a href="07-record-and-distill.html"><span>07</span><em>Record and Distill</em></a></li><li><a href="08-into-the-job-hunt.html"><span>08</span><em>Into the Job Hunt</em></a></li></ol>
+</aside>
+<article class="lesson">
+  <p class="eyebrow">Module 04</p>
+  <h1>Learn the Methods Through Your Project</h1>
+  <p class="lede">Study evals, error analysis, capability boundaries, context and agent design, always against a product you built.</p>
+  <dl class="meta"><dt>Time</dt><dd>1 to 3 weeks</dd><dt>You leave with</dt><dd>A capability boundary map, an eval set and an error analysis for your own product</dd></dl>
+  <div class="claude-note">Do this module with Claude: open the repository in Claude Code and type <code>start the course</code> or <code>continue</code>.</div>
+  <h2>Why this module</h2>
+<p>After Module 3 you have products that sometimes work and sometimes do strange things. That is the right moment to study methods. Every concept now has a place to land: "evals" is no longer an abstract word, it is how you find out whether your agent got better or worse after you changed the prompt.</p>
+<p>The methods in this module change much more slowly than the tools. They are what separate someone who built a demo from someone who can run an AI product.</p>
+<h2>How to study: a five-day block</h2>
+<p>When I wanted to go deep, I ran a five-day block with a fixed shape for each day:</p>
+<ul>
+<li><strong>1 hour of close reading</strong>, with a reading map written first: what is this text about, how does it relate to my project, which parts to read closely.</li>
+<li><strong>2 hours of extension</strong>: related reading, or applying the idea at work.</li>
+<li><strong>One hands-on task</strong>: something that produces a file you can show.</li>
+<li><strong>A self-test at the end</strong>: the AI writes multiple-choice, short-answer and application questions. You answer, then it marks you.</li>
+</ul>
+<p>Two lessons from running it: commute time is good for podcasts, as long as you do not try to take notes, and you mostly do not need paid courses. The best authors in this space publish their core material for free.</p>
+<h2>The methods</h2>
+<h3>1. Capability boundaries: decide where AI should and should not act</h3>
+<p>For each scenario in your product, place it in one of three zones:</p>
+<ul>
+<li><strong>Core zone</strong>: the AI handles it reliably. This is where you test hardest and promise quality.</li>
+<li><strong>Edge zone</strong>: in scope, but the AI sometimes falls short (weak knowledge, unclear user input, flawed workflow). You design fallbacks and improve over time.</li>
+<li><strong>Out-of-scope zone</strong>: the AI should not try. The right behavior is to hand off to another mode, ask a clarifying question, refuse politely, or pass to a person.</li>
+</ul>
+<p>This one map drives your test plan, your prompt rules and your support plan.</p>
+<h3>2. Evals: how you know it got better</h3>
+<ul>
+<li>Build a set of real inputs with the expected behavior for each. Twenty to fifty is enough to start.</li>
+<li>Prefer pass/fail judgments over 1-to-10 scores. They are faster to agree on and easier to act on.</li>
+<li>Run the whole set before and after every change to prompts, knowledge or models.</li>
+<li>The eval set is your acceptance standard. Write it before you ask anyone to build.</li>
+</ul>
+<h3>3. Error analysis: let real failures tell you what to fix</h3>
+<ul>
+<li>Collect real conversations or traces, including the failures.</li>
+<li>Read them and write a short free-form note on each failure.</li>
+<li>Group the notes into categories (a failure taxonomy), count each category, and fix the biggest one first.</li>
+<li>Generic metrics such as "hallucination score" are less useful than categories that come from your own data.</li>
+</ul>
+<h3>4. Context engineering: what the model sees decides what it does</h3>
+<ul>
+<li>Choose how knowledge reaches the model by the shape of the document. Long prose suits retrieval (RAG). Structured tables often work better with structured lookup. Small, stable rules can sit in the system prompt.</li>
+<li>Split stable global rules (system prompt) from scenario-specific procedures loaded only when needed (skills).</li>
+<li>Prefer positive instructions ("do this") over long lists of things not to do. Negative examples tend to leak into behavior.</li>
+<li>Add boundary knowledge: what the product covers, which brands or departments, what is out of scope. Without it, the model improvises at the edges.</li>
+</ul>
+<h3>5. Agents and multi-agent: only as complex as needed</h3>
+<p>Start with the simplest structure that works: one model call, then a fixed workflow, then an agent. Reach for multiple agents only when at least one of these is true:</p>
+<ul>
+<li><strong>Context pollution</strong>: a subtask generates lots of information the main task does not need.</li>
+<li><strong>Parallel exploration</strong>: the task benefits from searching many directions at once.</li>
+<li><strong>Specialization</strong>: different parts need different tools or conflicting instructions, or one agent would carry too many tools.</li>
+</ul>
+<p>Expect multi-agent systems to use several times more tokens, and often more total time, than a single agent on the same task.</p>
+<h3>6. Designing from the business goal, not from the architecture</h3>
+<p>When asked to design an agent system (a common interview question), work in this order:</p>
+<ol>
+<li>The business goal.</li>
+<li>The key business flow: how people do it today.</li>
+<li>Where it breaks: the decisions, delays and errors that cost the most.</li>
+<li>Agent roles and the human-in-the-loop points: which steps need a person, and why.</li>
+<li>How you will verify it works: the eval set and the metrics.</li>
+</ol>
+<p>This turns "build an agent" into "solve a business problem", which is what interviewers and stakeholders care about.</p>
+<h2>Reading list (checked November 2026)</h2>
+<p>Start with the first two. Add the rest when your project needs them.</p>
+<ul>
+<li>Anthropic, Building effective agents: <a href="https://www.anthropic.com/research/building-effective-agents">https://www.anthropic.com/research/building-effective-agents</a></li>
+<li>Hamel Husain, Your AI Product Needs Evals: <a href="https://hamel.dev/blog/posts/evals/">https://hamel.dev/blog/posts/evals/</a></li>
+<li>Hamel Husain, on error analysis: <a href="https://hamel.dev/blog/posts/evals-faq/why-is-error-analysis-so-important-in-llm-evals-and-how-is-it-performed.html">https://hamel.dev/blog/posts/evals-faq/why-is-error-analysis-so-important-in-llm-evals-and-how-is-it-performed.html</a></li>
+<li>Anthropic, When to use multi-agent systems: <a href="https://claude.com/blog/building-multi-agent-systems-when-and-how-to-use-them">https://claude.com/blog/building-multi-agent-systems-when-and-how-to-use-them</a></li>
+<li>Anthropic engineering blog (context engineering, harness design, agent skills): <a href="https://www.anthropic.com/engineering">https://www.anthropic.com/engineering</a></li>
+<li>Chip Huyen, <em>AI Engineering</em> (O'Reilly, 2024)</li>
+</ul>
+<h2>Exercise</h2>
+<ol>
+<li>Pick the product from Module 3 you care most about.</li>
+<li>With Claude, list 10 to 20 scenarios a user might bring to it. Place each in a zone. Save as <code>my-journey/projects/&lt;name&gt;-boundaries.md</code>.</li>
+<li>Turn the scenarios into an eval set (<code>templates/eval-set.csv</code>): input, expected behavior, pass/fail rule.</li>
+<li>Run your product against it. Record results honestly.</li>
+<li>For every failure, write one line on what went wrong. Ask Claude to help you group them into categories. Fix the largest category and run the set again.</li>
+<li>Take Claude's quiz on this module.</li>
+</ol>
+<h2>Check yourself</h2>
+<ul>
+<li>Which scenarios in your product belong in the out-of-scope zone, and what does the product do with them?</li>
+<li>Did your fix improve the eval results, or only the example you were looking at?</li>
+<li>Could your product be simpler, with fewer agents or fewer steps, and still pass?</li>
+</ul>
+<h2>From my journey</h2>
+<p>During the five-day block I wrote a capability boundary methodology and kept revising it as I applied it at work. One honest lesson: evaluation has well-written public methods, but AI product data operations (how to define a bad case, how to design labeling, how to connect user feedback to fixes) did not yet have a classic reference. I marked what had a source and what was my own working hypothesis. In areas without a textbook, your own practice is how the method gets written.</p>
+  <nav class="prevnext"><a class="pn prev" href="03-ship-in-week-one.html"><small>Previous</small>Ship in Week One</a><a class="pn next" href="05-chase-a-trend.html"><small>Next</small>Chase a Trend Without Drowning</a></nav>
+</article>
+</main>
+<footer class="footer">
+  <p>By Lucy Li, AI product manager. <a href="https://github.com/lucyli-lpl">@lucyli-lpl</a> · <a href="https://github.com/lucyli-lpl/zero2aipm">github.com/lucyli-lpl/zero2aipm</a></p>
+</footer>
+<script>
+document.querySelectorAll('.lang-switch').forEach(function (a) {
+  a.addEventListener('click', function () {
+    try { localStorage.setItem('z2a-lang', a.dataset.lang); } catch (e) {}
+  });
+});
+</script>
+</body>
+</html>

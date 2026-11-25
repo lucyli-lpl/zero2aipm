@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>07 · Record and Distill · zero2aipm</title>
+<meta name="description" content="Turn what you did into lessons, methods and shared work, and move from learner to contributor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html">zero2aipm</a>
+  <nav class="topnav">
+    <a href="https://github.com/lucyli-lpl/zero2aipm" class="ghost">GitHub</a>
+    <a href="../../zh/modules/07-record-and-distill.html" class="lang-switch" data-lang="zh">中文</a>
+  </nav>
+</header>
+<main class="module-layout">
+<aside class="sidebar">
+  <a class="back" href="../index.html">Home</a>
+  <p class="side-title">Modules</p>
+  <ol><li><a href="00-start-here.html"><span>00</span><em>Start Here</em></a></li><li><a href="01-ai-as-your-tutor.html"><span>01</span><em>AI as Your Tutor</em></a></li><li><a href="02-build-your-map.html"><span>02</span><em>Build Your Map</em></a></li><li><a href="03-ship-in-week-one.html"><span>03</span><em>Ship in Week One</em></a></li><li><a href="04-learn-the-methods.html"><span>04</span><em>Learn the Methods Through Your Project</em></a></li><li><a href="05-chase-a-trend.html"><span>05</span><em>Chase a Trend Without Drowning</em></a></li><li><a href="06-industry-crash-course.html"><span>06</span><em>Industry Crash Course</em></a></li><li class="active"><a href="07-record-and-distill.html"><span>07</span><em>Record and Distill</em></a></li><li><a href="08-into-the-job-hunt.html"><span>08</span><em>Into the Job Hunt</em></a></li></ol>
+</aside>
+<article class="lesson">
+  <p class="eyebrow">Module 07</p>
+  <h1>Record and Distill</h1>
+  <p class="lede">Turn what you did into lessons, methods and shared work, and move from learner to contributor.</p>
+  <dl class="meta"><dt>Time</dt><dd>30 minutes a week, ongoing</dd><dt>You leave with</dt><dd>A lessons file, one published piece and one reusable asset</dd></dl>
+  <div class="claude-note">Do this module with Claude: open the repository in Claude Code and type <code>start the course</code> or <code>continue</code>.</div>
+  <h2>Why this module</h2>
+<p>Three months after a project, you remember the result and forget why it worked. The notes you take now are what your future resume, interview stories, methods and public work are made of. Most people skip this step, which is why it sets you apart.</p>
+<h2>The method: four levels</h2>
+<p>Each level is built from the one below it.</p>
+<p><strong>Level 1. The daily log</strong> (from Module 0). What you did, status, and why things stalled. Fast and raw.</p>
+<p><strong>Level 2. Decision records</strong> (from Module 3). One page per project: the choice, the trade-off, what broke, what you would change.</p>
+<p><strong>Level 3. Lessons.</strong> Every week or two, read your log and records and pull out lessons that would apply to the next project too. Write each as one rule plus where it came from. Examples from my own file:</p>
+<ul>
+<li>Prefer positive instructions over lists of what not to do, in prompts, knowledge bases and fallbacks alike. (From two internal assistant projects.)</li>
+<li>Choose the retrieval method by the shape of the document. Structured tables often work better with structured lookup than with RAG. (From a policy Q&amp;A bot.)</li>
+<li>Response time is a core experience problem. Faster model choices, turning off reasoning where it is not needed, and moving non-AI steps out of the model all helped. (From two projects.)</li>
+<li>When users wait more than a few seconds, show meaningful intermediate states so they know what the model is doing. (From two projects.)</li>
+</ul>
+<p><strong>Level 4. Shared assets.</strong> When several lessons form a pattern, turn them into something other people can use: a method write-up, a template, a checklist, a skill for an AI assistant, an open-source repository, a post. This is how you move from learning to contributing.</p>
+<h2>Learn and record at the same time</h2>
+<p>Writing in public while you learn has two benefits. It forces you to structure what you learned, and it builds a record others can see. When I started posting about learning AI from zero during my career gap, the posts also showed me what people struggled with. The most common question was how to write a resume for AI roles, which later became a skill of its own.</p>
+<p>Two cautions:</p>
+<ul>
+<li><strong>Mark what is sourced and what is your hypothesis.</strong> It keeps you honest and makes your work more credible.</li>
+<li><strong>Keep company information out.</strong> Share methods and lessons, never internal data, system names or customer details.</li>
+</ul>
+<h2>Exercise</h2>
+<ol>
+<li>Read your learning log and decision records with Claude. Ask it to propose five candidate lessons. Keep only the ones you agree with, and rewrite them in your own words in <code>my-journey/lessons.md</code>.</li>
+<li>Choose one lesson or project and write a short public piece about it: a post, a thread or a README. Mark sources and hypotheses.</li>
+<li>Choose one thing you did more than twice (an analysis, a checklist, a prompt) and turn it into a reusable asset: a template, a checklist or an AI skill. Save it under <code>my-journey/assets/</code>.</li>
+<li>Put a recurring reminder in your calendar: 30 minutes every week to update your lessons.</li>
+</ol>
+<h2>Check yourself</h2>
+<ul>
+<li>Is every lesson in your file tied to where it came from?</li>
+<li>Would a stranger understand your public piece without knowing your project?</li>
+<li>Is your reusable asset something you would use again next month?</li>
+</ul>
+<h2>From my journey</h2>
+<p>My lessons file started as a few lines after two internal assistant projects. A focused week of study turned it into a capability boundary method, which I published. Later I built a library of AI design patterns across products, a monthly scan of open-source trends, and a set of skills for analyzing AI products. None of it started as a plan. It started as notes I kept.</p>
+  <nav class="prevnext"><a class="pn prev" href="06-industry-crash-course.html"><small>Previous</small>Industry Crash Course</a><a class="pn next" href="08-into-the-job-hunt.html"><small>Next</small>Into the Job Hunt</a></nav>
+</article>
+</main>
+<footer class="footer">
+  <p>By Lucy Li, AI product manager. <a href="https://github.com/lucyli-lpl">@lucyli-lpl</a> · <a href="https://github.com/lucyli-lpl/zero2aipm">github.com/lucyli-lpl/zero2aipm</a></p>
+</footer>
+<script>
+document.querySelectorAll('.lang-switch').forEach(function (a) {
+  a.addEventListener('click', function () {
+    try { localStorage.setItem('z2a-lang', a.dataset.lang); } catch (e) {}
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>03 · 第一周就上线 · zero2aipm</title>
+<meta name="description" content="别再准备了。做三个互补的小 AI 产品，并且放到线上。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../../zh/index.html">zero2aipm</a>
+  <nav class="topnav">
+    <a href="https://github.com/lucyli-lpl/zero2aipm" class="ghost">GitHub</a>
+    <a href="../../modules/03-ship-in-week-one.html" class="lang-switch" data-lang="en">English</a>
+  </nav>
+</header>
+<main class="module-layout">
+<aside class="sidebar">
+  <a class="back" href="../index.html">首页</a>
+  <p class="side-title">模块</p>
+  <ol><li><a href="00-start-here.html"><span>00</span><em>从这里开始</em></a></li><li><a href="01-ai-as-your-tutor.html"><span>01</span><em>把 AI 当导师</em></a></li><li><a href="02-build-your-map.html"><span>02</span><em>建立地图</em></a></li><li class="active"><a href="03-ship-in-week-one.html"><span>03</span><em>第一周就上线</em></a></li><li><a href="04-learn-the-methods.html"><span>04</span><em>带着项目学方法论</em></a></li><li><a href="05-chase-a-trend.html"><span>05</span><em>追热点不被淹没</em></a></li><li><a href="06-industry-crash-course.html"><span>06</span><em>行业速成</em></a></li><li><a href="07-record-and-distill.html"><span>07</span><em>记录与沉淀</em></a></li><li><a href="08-into-the-job-hunt.html"><span>08</span><em>进入求职</em></a></li></ol>
+</aside>
+<article class="lesson">
+  <p class="eyebrow">模块 03</p>
+  <h1>第一周就上线</h1>
+  <p class="lede">别再准备了。做三个互补的小 AI 产品，并且放到线上。</p>
+  <dl class="meta"><dt>时间</dt><dd>2 到 6 周</dd><dt>学完你会有</dt><dd>三个上线的产品，每个都有一份决策记录</dd></dl>
+  <div class="claude-note">和 Claude 一起学这个模块：在 Claude Code 里打开仓库，输入<code>开始课程</code>或<code>继续</code>。</div>
+  <h2>为什么学这个</h2>
+<p>整门课都是围绕这个模块搭起来的。我最大的遗憾，是在动手之前"学 AI"学了太久。几个月的阅读几乎没留下能拿出手的东西。而第一个动手的周末，就换来了一个上线的产品、对 RAG 和提示词的真正理解，以及一个后来每场面试都在讲的故事。</p>
+<p>动手能做到三件读书做不到的事：</p>
+<ul>
+<li>逼你去学真正需要的概念，而且是按需要的顺序学。</li>
+<li>给你失败。产品判断力就是从失败里来的。</li>
+<li>给你证据。"我做出来并上线了"在任何面试里都胜过"我研究过"。</li>
+</ul>
+<h2>方法</h2>
+<h3>用三个问题选题</h3>
+<p>每个项目想法，都回答这三个问题：</p>
+<ol>
+<li><strong>这是谁的真实问题？</strong> 最好是你自己的，或者你非常熟悉的。你会懂用户，讲故事时也最真。</li>
+<li><strong>AI 在这里做什么？非用 AI 不可吗？</strong> 如果一个表单或一张表格就能解决，换一个题目。</li>
+<li><strong>两周内能上线第一个版本吗？</strong> 不能就砍范围，砍到能为止。</li>
+</ol>
+<h3>三个项目要互补</h3>
+<p>每个项目练一块不同的肌肉：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>练什么</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一个有知识和人设的 Agent</td>
+<td>AI 设计：提示词、知识库、边界，以及 Agent 拒绝做什么</td>
+<td>在无代码 Agent 平台上做一个餐厅客服 Agent</td>
+</tr>
+<tr>
+<td>一个全栈应用</td>
+<td>上线能力：界面、后端、数据库、部署</td>
+<td>一个调用模型 API 的小网页应用或小游戏</td>
+</tr>
+<tr>
+<td>一个需要做产品形态决策的产品</td>
+<td>产品判断：为什么是这个形态、给谁用</td>
+<td>一个出现在用户本来就在的地方的工具（小程序、bot、邮件）</td>
+</tr>
+</tbody>
+</table></div>
+<h3>先易后难</h3>
+<p>第一个项目用无代码 Agent 平台，你可以专注在提示词、知识和工作流上，不用跟代码较劲。第二、三个项目换成 AI 编程工具，做真正的部署。做完三个，你应该把每一步都走过一遍：描述产品、设计界面、生成代码、连数据库、部署、分享链接。</p>
+<h3>上线的意思是：别人能打开链接</h3>
+<p>在你电脑上能跑不算上线。别人不能通过一个链接打开，就还不算数。</p>
+<h3>每个项目写一份决策记录</h3>
+<p>一页纸，五个标题：</p>
+<ol>
+<li>问题和用户</li>
+<li>AI 做什么，以及刻意不做什么</li>
+<li>一个决策和它的取舍（"我选了 X 而不是 Y，因为……"）</li>
+<li>哪里出了问题，怎么修好的</li>
+<li>如果今天重做，我会改什么</li>
+</ol>
+<p>面试官问决策多过问功能。这份记录就是你要讲的内容。</p>
+<h2>工具快照（2026 年 3 月，请确认现在的情况）</h2>
+<p>这是我当时用的。你读到这里时，大概有好几个已经变了。选工具之前让 Claude 查一下现在的情况。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>环节</th>
+<th>我当时用的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>思考和写作用的对话模型</td>
+<td>Claude（Sonnet 4.6 及以上）</td>
+</tr>
+<tr>
+<td>无代码 Agent 平台</td>
+<td>扣子（Coze）</td>
+</tr>
+<tr>
+<td>界面和交互设计</td>
+<td>Stitch 配合 Google AI Studio，或 v0</td>
+</tr>
+<tr>
+<td>写代码</td>
+<td>Claude Code、Cursor</td>
+</tr>
+<tr>
+<td>国内便宜的模型 API</td>
+<td>硅基流动（GLM、DeepSeek 系列模型）</td>
+</tr>
+<tr>
+<td>版本管理</td>
+<td>GitHub</td>
+</tr>
+<tr>
+<td>免费数据库</td>
+<td>Supabase</td>
+</tr>
+<tr>
+<td>免费部署和域名</td>
+<td>Vercel</td>
+</tr>
+</tbody>
+</table></div>
+<h2>练习</h2>
+<ol>
+<li>告诉 Claude 你的情况和三个项目想法。Claude 会用三个问题逐个过一遍，帮你选出一组互补的项目。</li>
+<li>第一个项目，在 Claude 帮助下写一段需求描述，然后做出来。卡住时 Claude 会帮你，但决定由你来做。</li>
+<li>放到线上，把链接贴进学习日志。</li>
+<li>用 <code>templates/decision-record.md</code> 在 <code>my-journey/projects/&lt;项目名&gt;.md</code> 写决策记录。</li>
+<li>第二、三个项目重复以上步骤。每次开始前问 Claude："上一个项目没练到什么？"</li>
+</ol>
+<h2>自测</h2>
+<ul>
+<li>陌生人能通过链接打开你的三个产品吗？</li>
+<li>每个项目，你能用一句话说出一个决策和它的取舍吗？</li>
+<li>哪个项目让你学到最多？是你预想的那个吗？</li>
+</ul>
+<h2>我的经历</h2>
+<p>2026 年 3 月中旬，我暂停投简历，用一个周末在无代码平台上做了一个蟹煲餐厅的客服 Agent。我家里人做餐饮，我很懂这个用户。我给它设定了俏皮的卡通人设，因为我想象它的顾客是小朋友。两天后，我用 Claude、v0 和 Cursor 做出了一个世界观网站加小游戏，上线了。接着我做了一个每天只推一条 AI 资讯的小程序，因为我想要一个主动来找我的东西，而不是一个要我自己去刷的信息流。这个产品形态的决策，后来成了我面试里最好的回答之一。</p>
+<p>这个小程序也正好说明了方案过时得有多快。2026 年初，用带推送的小程序是合理的选择。到了 2026 年底，一个个人 bot 或者一个定时任务就能做到同样的事，工作量小得多。留下推理过程，接受方案会变。</p>
+  <nav class="prevnext"><a class="pn prev" href="02-build-your-map.html"><small>上一个</small>建立地图</a><a class="pn next" href="04-learn-the-methods.html"><small>下一个</small>带着项目学方法论</a></nav>
+</article>
+</main>
+<footer class="footer">
+  <p>作者 Lucy Li，AI 产品经理。 <a href="https://github.com/lucyli-lpl">@lucyli-lpl</a> · <a href="https://github.com/lucyli-lpl/zero2aipm">github.com/lucyli-lpl/zero2aipm</a></p>
+</footer>
+<script>
+document.querySelectorAll('.lang-switch').forEach(function (a) {
+  a.addEventListener('click', function () {
+    try { localStorage.setItem('z2a-lang', a.dataset.lang); } catch (e) {}
+  });
+});
+</script>
+</body>
+</html>

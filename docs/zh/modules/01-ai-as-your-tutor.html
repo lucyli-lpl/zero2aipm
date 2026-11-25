@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>01 · 把 AI 当导师 · zero2aipm</title>
+<meta name="description" content="从概念要解决的问题出发把它重新推导一遍，再让 AI 来考你。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../../zh/index.html">zero2aipm</a>
+  <nav class="topnav">
+    <a href="https://github.com/lucyli-lpl/zero2aipm" class="ghost">GitHub</a>
+    <a href="../../modules/01-ai-as-your-tutor.html" class="lang-switch" data-lang="en">English</a>
+  </nav>
+</header>
+<main class="module-layout">
+<aside class="sidebar">
+  <a class="back" href="../index.html">首页</a>
+  <p class="side-title">模块</p>
+  <ol><li><a href="00-start-here.html"><span>00</span><em>从这里开始</em></a></li><li class="active"><a href="01-ai-as-your-tutor.html"><span>01</span><em>把 AI 当导师</em></a></li><li><a href="02-build-your-map.html"><span>02</span><em>建立地图</em></a></li><li><a href="03-ship-in-week-one.html"><span>03</span><em>第一周就上线</em></a></li><li><a href="04-learn-the-methods.html"><span>04</span><em>带着项目学方法论</em></a></li><li><a href="05-chase-a-trend.html"><span>05</span><em>追热点不被淹没</em></a></li><li><a href="06-industry-crash-course.html"><span>06</span><em>行业速成</em></a></li><li><a href="07-record-and-distill.html"><span>07</span><em>记录与沉淀</em></a></li><li><a href="08-into-the-job-hunt.html"><span>08</span><em>进入求职</em></a></li></ol>
+</aside>
+<article class="lesson">
+  <p class="eyebrow">模块 01</p>
+  <h1>把 AI 当导师</h1>
+  <p class="lede">从概念要解决的问题出发把它重新推导一遍，再让 AI 来考你。</p>
+  <dl class="meta"><dt>时间</dt><dd>1 小时</dd><dt>学完你会有</dt><dd>用推导法学会三个概念，每个都做过自测</dd></dl>
+  <div class="claude-note">和 Claude 一起学这个模块：在 Claude Code 里打开仓库，输入<code>开始课程</code>或<code>继续</code>。</div>
+  <h2>为什么学这个</h2>
+<p>你几乎每天都会碰到新的 AI 名词：RAG、MCP、harness、上下文工程，还有下个月才会出现的新词。背定义撑不了多久。定义只告诉你它叫什么，不告诉你它为什么存在，所以下一个换了名字的变体，又像是一个要从头学的新东西。</p>
+<p>你手边最快的学习伙伴就是 AI 本身。大多数人把它当成回答问题的搜索引擎。用对了，它是一个会讲解、会检查你理解程度、会指出你哪里错了的导师。</p>
+<h2>方法：先推导，再被考</h2>
+<p><strong>第一步：回到这个概念出现之前的世界。</strong> 问自己：当时人们想做什么、遇到了什么问题、为什么显而易见的解法行不通？然后假装这个概念还没被发明，把它推导出来。</p>
+<p>以 RAG 为例：</p>
+<ul>
+<li>之前：大模型只知道训练数据里有的东西。训练数据截止到某个日期，也永远不会包含你公司的文档。</li>
+<li>显而易见的解法一：用你的文档重新训练模型。太慢太贵，文档每改一次就得训一次。</li>
+<li>显而易见的解法二：把所有文档都塞进提示词。提示词有长度上限，而且越长越慢、越贵、越不准。</li>
+<li>所以需要一种办法，只找出和这个问题相关的几段内容，只把它们放进提示词。这就是检索增强生成（RAG）。</li>
+</ul>
+<p>这样推导一遍之后，后面的概念就不再是新词了。"混合检索""重排序""切块策略"都是在回答"检索这一步找错了内容"这个你已经理解的问题。</p>
+<p><strong>第二步：让 AI 用这种方式讲给你听。</strong> 一个好用的提示词：</p>
+<blockquote>
+<p>用推导的方式教我 [概念]。从它出现之前的世界讲起：人们当时遇到了什么问题，最先尝试了什么，为什么不行？然后一步步推导出 [概念]。用一个具体的例子，400 字以内。</p>
+</blockquote>
+<p><strong>第三步：让它考你。</strong> 讲完马上要一个小测验：两道选择题、一道简答题、一道把概念用到你熟悉的产品上的应用题。不看前面的内容直接答。答错的就是要回头再看的。</p>
+<p><strong>第四步：用自己的话写下来。</strong> 在名词库里用大白话写一句，就像讲给朋友听。写不出来，就说明还没学完。</p>
+<h2>让 AI 成为更好导师的习惯</h2>
+<ul>
+<li><strong>告诉它你是谁。</strong> "我是没有工程背景的产品经理"这一句，会让讲解完全不同。</li>
+<li><strong>只要一个例子，不要五个。</strong> 一个讲透的例子胜过一串列表。</li>
+<li><strong>反问它。</strong> 如果讲解听起来太顺，就问"这个做法最有力的反对意见是什么"或者"实际中它会在哪里出问题"。</li>
+<li><strong>问它最近有什么变化。</strong> 模型不知道训练之后发生的所有事。凡是关于"现在"的问题，让 AI 去搜索，或者自己查一个最近的来源。</li>
+</ul>
+<h2>练习</h2>
+<ol>
+<li>挑三个你见过但解释不清的词。实在没有，就用：上下文窗口、函数调用、评测（evals）。</li>
+<li>每个词都让 Claude 用推导的方式教你（这门课里 Claude 默认就这么讲）。</li>
+<li>每讲完一个，做 Claude 给的小测验。先写下自己的答案，再看正确答案。</li>
+<li>把每个词用一两句大白话加进 <code>my-journey/glossary.md</code>，注明日期。</li>
+<li>在学习日志里记下这次学习。</li>
+</ol>
+<h2>自测</h2>
+<ul>
+<li>三个词里挑一个，你能不用这个词本身，说出它解决的问题吗？</li>
+<li>测验里你错了哪道题，为什么？</li>
+<li>什么情况会让你学的某个概念过时？（能回答这个，说明你真懂了。）</li>
+</ul>
+<h2>我的经历</h2>
+<p>刚开始，我是看大白话科普视频，再把定义抄进文档来学名词的。这帮我读懂了行业报告，但几周后大部分都忘了。留下来的，是那些我必须在项目里用上、或者从问题出发推导过一遍的概念。后来，"用推导的方式教我"成了我问任何新东西时的默认问法。</p>
+  <nav class="prevnext"><a class="pn prev" href="00-start-here.html"><small>上一个</small>从这里开始</a><a class="pn next" href="02-build-your-map.html"><small>下一个</small>建立地图</a></nav>
+</article>
+</main>
+<footer class="footer">
+  <p>作者 Lucy Li，AI 产品经理。 <a href="https://github.com/lucyli-lpl">@lucyli-lpl</a> · <a href="https://github.com/lucyli-lpl/zero2aipm">github.com/lucyli-lpl/zero2aipm</a></p>
+</footer>
+<script>
+document.querySelectorAll('.lang-switch').forEach(function (a) {
+  a.addEventListener('click', function () {
+    try { localStorage.setItem('z2a-lang', a.dataset.lang); } catch (e) {}
+  });
+});
+</script>
+</body>
+</html>

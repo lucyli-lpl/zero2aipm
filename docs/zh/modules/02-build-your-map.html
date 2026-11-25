@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>02 · 建立地图 · zero2aipm</title>
+<meta name="description" content="认真读一份行业报告，查清每个不懂的词，带着一份名词库和一张领域全景图出来。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../../zh/index.html">zero2aipm</a>
+  <nav class="topnav">
+    <a href="https://github.com/lucyli-lpl/zero2aipm" class="ghost">GitHub</a>
+    <a href="../../modules/02-build-your-map.html" class="lang-switch" data-lang="en">English</a>
+  </nav>
+</header>
+<main class="module-layout">
+<aside class="sidebar">
+  <a class="back" href="../index.html">首页</a>
+  <p class="side-title">模块</p>
+  <ol><li><a href="00-start-here.html"><span>00</span><em>从这里开始</em></a></li><li><a href="01-ai-as-your-tutor.html"><span>01</span><em>把 AI 当导师</em></a></li><li class="active"><a href="02-build-your-map.html"><span>02</span><em>建立地图</em></a></li><li><a href="03-ship-in-week-one.html"><span>03</span><em>第一周就上线</em></a></li><li><a href="04-learn-the-methods.html"><span>04</span><em>带着项目学方法论</em></a></li><li><a href="05-chase-a-trend.html"><span>05</span><em>追热点不被淹没</em></a></li><li><a href="06-industry-crash-course.html"><span>06</span><em>行业速成</em></a></li><li><a href="07-record-and-distill.html"><span>07</span><em>记录与沉淀</em></a></li><li><a href="08-into-the-job-hunt.html"><span>08</span><em>进入求职</em></a></li></ol>
+</aside>
+<article class="lesson">
+  <p class="eyebrow">模块 02</p>
+  <h1>建立地图</h1>
+  <p class="lede">认真读一份行业报告，查清每个不懂的词，带着一份名词库和一张领域全景图出来。</p>
+  <dl class="meta"><dt>时间</dt><dd>1 到 2 周，和模块 3 同时进行</dd><dt>学完你会有</dt><dd>30 个以上词条的名词库和一页领域地图</dd></dl>
+  <div class="claude-note">和 Claude 一起学这个模块：在 Claude Code 里打开仓库，输入<code>开始课程</code>或<code>继续</code>。</div>
+  <h2>为什么学这个</h2>
+<p>刚入门时，所有东西看起来都一样重要：模型发布、融资新闻、新框架、刷屏的演示。你需要先有一张粗略的地图，才能分清哪些是地基，哪些只是这个月的新闻。</p>
+<p>现在还不需要深入。你需要的是认得主要概念、知道它们之间的关系、知道需要更多时去哪里找。</p>
+<h2>方法：一份报告，每个不懂的词</h2>
+<ol>
+<li><strong>选一份认真的行业报告。</strong> 找大型科技公司、研究院、咨询公司或商学院出的年度 AI 报告。要是最近 12 个月内的，同时讲技术和应用。</li>
+<li><strong>开着名词库读。</strong> 每碰到一个解释不清的词就停下，用推导法（模块 1）学会它，加进名词库。第一份报告会读得很慢，这正是目的：报告本身就是一份你该学什么的清单，顺序也大致是业内使用它们的顺序。</li>
+<li><strong>把学到的东西分层。</strong> 读完后，按下面的地图整理名词库。</li>
+<li><strong>开始动手（模块 3）之后再读第二份。</strong> 大多数人在做出任何东西之前读得太多了。</li>
+</ol>
+<h2>一张领域地图</h2>
+<p>这几层变化很慢，即使层里面的工具变得很快。把它们当作名词库的书架。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>层</th>
+<th>讲什么</th>
+<th>词条举例（截至 2026 年）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>模型是怎么做出来的</td>
+<td>训练阶段，以及每个阶段改变了什么</td>
+<td>预训练、后训练、微调（SFT、LoRA）、RLHF、推理模型</td>
+</tr>
+<tr>
+<td>模型能做什么、不能做什么</td>
+<td>能力、局限、怎么衡量</td>
+<td>上下文窗口、幻觉、基准测试、多模态、Token 和限流</td>
+</tr>
+<tr>
+<td>让模型拿到对的信息</td>
+<td>提示词周围的一切</td>
+<td>提示词工程、上下文工程、RAG、知识图谱、记忆</td>
+</tr>
+<tr>
+<td>让模型行动</td>
+<td>工具和自主性</td>
+<td>函数调用、MCP、Agent、多 Agent、Skills</td>
+</tr>
+<tr>
+<td>让它可靠</td>
+<td>质量和控制</td>
+<td>评测、错误分析、护栏、人在环、harness 工程</td>
+</tr>
+<tr>
+<td>把它变成产品</td>
+<td>产品和商业决策</td>
+<td>能力边界、成本和时延、信任、数据飞轮、定价</td>
+</tr>
+</tbody>
+</table></div>
+<p>我笔记里有两条，初学者常常搞混：</p>
+<ul>
+<li><strong>微调教的是模型怎么回答</strong>（格式、风格、听从指令），它不能可靠地教会模型新知识。要补新知识，用检索（RAG），或者花大得多的代价做增量预训练。</li>
+<li><strong>大部分产品工作发生在中间三层。</strong> 作为产品经理，你很少会去训练模型，但会不断决定：模型拿到什么信息、允许它做什么、怎么知道它做对了。</li>
+</ul>
+<p>扩散模型、GAN、液态神经网络、目标检测这类偏研究的内容，认识就好，对大多数 AI 产品经理岗位来说是选修。把它们放到"了解即可"的书架上，继续往前走。</p>
+<h2>练习</h2>
+<ol>
+<li>让 Claude 帮你选一份报告。告诉它你最感兴趣的行业，Claude 会推荐几份最近的，并确认可以公开获取。</li>
+<li>分几天读完。每个不懂的词都加进 <code>my-journey/glossary.md</code>，写上日期和一句大白话解释。</li>
+<li>攒够 30 个词后，让 Claude 按上面六层整理你的名词库。看看哪一层最薄。</li>
+<li>画出你的地图：一页纸（列表、表格或草图都行），六层上放着你的词条。存为 <code>my-journey/map.md</code>。</li>
+<li>让 Claude 从名词库里随机抽十个词考你。答错的重新学。</li>
+</ol>
+<h2>自测</h2>
+<ul>
+<li>你的地图哪一层最薄？对你想去的岗位来说，这重要吗？</li>
+<li>你能把微调和 RAG 的区别讲给一个不懂技术的朋友听吗？</li>
+<li>名词库里哪三个词，你预计一年内会被改名或被取代？</li>
+</ul>
+<h2>我的经历</h2>
+<p>我读的第一份报告是一家大型科技公司的 2025 年度 AI 报告。读的时候，每碰到一个不懂的词就停下来，边读边建名词库。这花了我大半周，每天都记进了日志。后来我的名词库覆盖了训练阶段、模型架构、基准测试、RAG 加知识图谱、模型选型等等。回头看，大约一半是做产品必需的，一半是出于好奇。这个比例没问题，只要好奇的那一半不耽误模块 3。</p>
+  <nav class="prevnext"><a class="pn prev" href="01-ai-as-your-tutor.html"><small>上一个</small>把 AI 当导师</a><a class="pn next" href="03-ship-in-week-one.html"><small>下一个</small>第一周就上线</a></nav>
+</article>
+</main>
+<footer class="footer">
+  <p>作者 Lucy Li，AI 产品经理。 <a href="https://github.com/lucyli-lpl">@lucyli-lpl</a> · <a href="https://github.com/lucyli-lpl/zero2aipm">github.com/lucyli-lpl/zero2aipm</a></p>
+</footer>
+<script>
+document.querySelectorAll('.lang-switch').forEach(function (a) {
+  a.addEventListener('click', function () {
+    try { localStorage.setItem('z2a-lang', a.dataset.lang); } catch (e) {}
+  });
+});
+</script>
+</body>
+</html>

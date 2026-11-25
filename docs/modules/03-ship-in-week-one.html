@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>03 · Ship in Week One · zero2aipm</title>
+<meta name="description" content="Stop preparing. Build three small, complementary AI products and put them online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html">zero2aipm</a>
+  <nav class="topnav">
+    <a href="https://github.com/lucyli-lpl/zero2aipm" class="ghost">GitHub</a>
+    <a href="../../zh/modules/03-ship-in-week-one.html" class="lang-switch" data-lang="zh">中文</a>
+  </nav>
+</header>
+<main class="module-layout">
+<aside class="sidebar">
+  <a class="back" href="../index.html">Home</a>
+  <p class="side-title">Modules</p>
+  <ol><li><a href="00-start-here.html"><span>00</span><em>Start Here</em></a></li><li><a href="01-ai-as-your-tutor.html"><span>01</span><em>AI as Your Tutor</em></a></li><li><a href="02-build-your-map.html"><span>02</span><em>Build Your Map</em></a></li><li class="active"><a href="03-ship-in-week-one.html"><span>03</span><em>Ship in Week One</em></a></li><li><a href="04-learn-the-methods.html"><span>04</span><em>Learn the Methods Through Your Project</em></a></li><li><a href="05-chase-a-trend.html"><span>05</span><em>Chase a Trend Without Drowning</em></a></li><li><a href="06-industry-crash-course.html"><span>06</span><em>Industry Crash Course</em></a></li><li><a href="07-record-and-distill.html"><span>07</span><em>Record and Distill</em></a></li><li><a href="08-into-the-job-hunt.html"><span>08</span><em>Into the Job Hunt</em></a></li></ol>
+</aside>
+<article class="lesson">
+  <p class="eyebrow">Module 03</p>
+  <h1>Ship in Week One</h1>
+  <p class="lede">Stop preparing. Build three small, complementary AI products and put them online.</p>
+  <dl class="meta"><dt>Time</dt><dd>2 to 6 weeks</dd><dt>You leave with</dt><dd>Three live products, each with a decision record</dd></dl>
+  <div class="claude-note">Do this module with Claude: open the repository in Claude Code and type <code>start the course</code> or <code>continue</code>.</div>
+  <h2>Why this module</h2>
+<p>This is the module the whole course is built around. My biggest regret is how long I spent "learning AI" before building anything. Months of reading produced almost nothing I could show. The first weekend of building produced a live product, a working understanding of RAG and prompts, and a story I told in every interview afterwards.</p>
+<p>Building does three things reading cannot:</p>
+<ul>
+<li>It forces you to learn the concepts you actually need, in the order you need them.</li>
+<li>It gives you failures. Failures are where product judgment comes from.</li>
+<li>It gives you evidence. "I built and shipped this" beats "I have studied this" in every interview.</li>
+</ul>
+<h2>The method</h2>
+<h3>Choose with three questions</h3>
+<p>For each project idea, answer:</p>
+<ol>
+<li><strong>Whose real problem is this?</strong> Best of all: your own, or one you know closely. You will understand the user and you will tell the story honestly.</li>
+<li><strong>What does AI do here, and does it need AI?</strong> If a form or a spreadsheet solves it, choose something else.</li>
+<li><strong>Can a first version be live within two weeks?</strong> If not, cut scope until it can.</li>
+</ol>
+<h3>Make the three projects complementary</h3>
+<p>Each project should train a different muscle:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Project</th>
+<th>Trains</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>An agent with knowledge and a persona</td>
+<td>AI design: prompts, knowledge base, boundaries, what the agent refuses to do</td>
+<td>A customer service agent for a restaurant, built on a no-code agent platform</td>
+</tr>
+<tr>
+<td>A full-stack app</td>
+<td>Shipping: UI, backend, database, deployment</td>
+<td>A small web app or game that calls a model API</td>
+</tr>
+<tr>
+<td>A product with a real form-factor decision</td>
+<td>Product judgment: why this form, for whom</td>
+<td>A tool delivered where the user already is (a mini program, a bot, an email)</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Start easy, then go deeper</h3>
+<p>Start the first project on a no-code agent platform. You can focus on the prompt, the knowledge and the workflow without fighting code. For the second and third projects, move to AI coding tools and real deployment. By the end you should have done every step once: describe the product, design the screens, generate the code, connect a database, deploy, share a link.</p>
+<h3>Ship means a link someone else can open</h3>
+<p>Working on your laptop is not shipped. If someone cannot open it from a link, it does not count yet.</p>
+<h3>Write a decision record for each project</h3>
+<p>One page, five headings:</p>
+<ol>
+<li>The problem and the user</li>
+<li>What the AI does, and what it deliberately does not do</li>
+<li>One decision and its trade-off ("I chose X over Y because...")</li>
+<li>What broke, and how I fixed it</li>
+<li>If I built it again today, what I would change</li>
+</ol>
+<p>Interviewers ask about decisions more than features. This record is what you will talk about.</p>
+<h2>Tool snapshot (March 2026, check what is current)</h2>
+<p>This is what I used. Expect several of these to have changed by the time you read this. Ask Claude to check what is current before you pick.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What I used then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chat model for thinking and writing</td>
+<td>Claude (Sonnet 4.6 or later)</td>
+</tr>
+<tr>
+<td>No-code agent platform</td>
+<td>Coze</td>
+</tr>
+<tr>
+<td>UI and interaction design</td>
+<td>Stitch with Google AI Studio, or v0</td>
+</tr>
+<tr>
+<td>Coding</td>
+<td>Claude Code, Cursor</td>
+</tr>
+<tr>
+<td>Cheaper model API inside China</td>
+<td>SiliconFlow (GLM or DeepSeek models)</td>
+</tr>
+<tr>
+<td>Version control</td>
+<td>GitHub</td>
+</tr>
+<tr>
+<td>Free database</td>
+<td>Supabase</td>
+</tr>
+<tr>
+<td>Free hosting and a domain</td>
+<td>Vercel</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Exercise</h2>
+<ol>
+<li>Tell Claude about yourself and three possible project ideas. Claude will run each through the three questions and help you pick a complementary set.</li>
+<li>For the first project, write a one-paragraph spec with Claude's help, then build it. Claude helps when you are stuck, but you make the decisions.</li>
+<li>Put it online and paste the link into your learning log.</li>
+<li>Write the decision record in <code>my-journey/projects/&lt;project-name&gt;.md</code> using <code>templates/decision-record.md</code>.</li>
+<li>Repeat for the second and third projects. Before each one, ask Claude: "What did the last project not train?"</li>
+</ol>
+<h2>Check yourself</h2>
+<ul>
+<li>Can a stranger open all three of your products from a link?</li>
+<li>For each project, can you state one decision and its trade-off in one sentence?</li>
+<li>Which project taught you the most, and was it the one you expected?</li>
+</ul>
+<h2>From my journey</h2>
+<p>In mid-March 2026 I paused applying and built, over one weekend, a customer service agent for a crab restaurant on a no-code platform. My family runs restaurants, so I knew the user well. I gave it a playful cartoon persona because I imagined children as its customers. Two days later I shipped a lore website and game built with Claude, v0 and Cursor. Then I built a mini program that pushes one AI news item a day, because I wanted something that came to me instead of a feed I had to visit. That form-factor decision became one of my best interview answers.</p>
+<p>The mini program is a good example of how fast solutions date. In early 2026 a mini program with push was a reasonable choice. By late 2026, a personal bot or a scheduled task does the same job with far less work. Keep the reasoning; expect the solution to change.</p>
+  <nav class="prevnext"><a class="pn prev" href="02-build-your-map.html"><small>Previous</small>Build Your Map</a><a class="pn next" href="04-learn-the-methods.html"><small>Next</small>Learn the Methods Through Your Project</a></nav>
+</article>
+</main>
+<footer class="footer">
+  <p>By Lucy Li, AI product manager. <a href="https://github.com/lucyli-lpl">@lucyli-lpl</a> · <a href="https://github.com/lucyli-lpl/zero2aipm">github.com/lucyli-lpl/zero2aipm</a></p>
+</footer>
+<script>
+document.querySelectorAll('.lang-switch').forEach(function (a) {
+  a.addEventListener('click', function () {
+    try { localStorage.setItem('z2a-lang', a.dataset.lang); } catch (e) {}
+  });
+});
+</script>
+</body>
+</html>

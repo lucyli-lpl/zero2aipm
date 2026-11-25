@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>05 · Chase a Trend Without Drowning · zero2aipm</title>
+<meta name="description" content="Decide in ten minutes whether a hot new thing deserves your time, then learn it in two hours and write it up.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html">zero2aipm</a>
+  <nav class="topnav">
+    <a href="https://github.com/lucyli-lpl/zero2aipm" class="ghost">GitHub</a>
+    <a href="../../zh/modules/05-chase-a-trend.html" class="lang-switch" data-lang="zh">中文</a>
+  </nav>
+</header>
+<main class="module-layout">
+<aside class="sidebar">
+  <a class="back" href="../index.html">Home</a>
+  <p class="side-title">Modules</p>
+  <ol><li><a href="00-start-here.html"><span>00</span><em>Start Here</em></a></li><li><a href="01-ai-as-your-tutor.html"><span>01</span><em>AI as Your Tutor</em></a></li><li><a href="02-build-your-map.html"><span>02</span><em>Build Your Map</em></a></li><li><a href="03-ship-in-week-one.html"><span>03</span><em>Ship in Week One</em></a></li><li><a href="04-learn-the-methods.html"><span>04</span><em>Learn the Methods Through Your Project</em></a></li><li class="active"><a href="05-chase-a-trend.html"><span>05</span><em>Chase a Trend Without Drowning</em></a></li><li><a href="06-industry-crash-course.html"><span>06</span><em>Industry Crash Course</em></a></li><li><a href="07-record-and-distill.html"><span>07</span><em>Record and Distill</em></a></li><li><a href="08-into-the-job-hunt.html"><span>08</span><em>Into the Job Hunt</em></a></li></ol>
+</aside>
+<article class="lesson">
+  <p class="eyebrow">Module 05</p>
+  <h1>Chase a Trend Without Drowning</h1>
+  <p class="lede">Decide in ten minutes whether a hot new thing deserves your time, then learn it in two hours and write it up.</p>
+  <dl class="meta"><dt>Time</dt><dd>Ongoing, about 3 hours per trend</dd><dt>You leave with</dt><dd>A trend triage note and one product teardown</dd></dl>
+  <div class="claude-note">Do this module with Claude: open the repository in Claude Code and type <code>start the course</code> or <code>continue</code>.</div>
+  <h2>Why this module</h2>
+<p>Something new goes viral in AI almost every month. If you chase all of it, you learn a little about everything and finish nothing. If you ignore all of it, you sound out of date in interviews, because interviewers love to ask "have you tried X?"</p>
+<p>The skill is not keeping up with everything. It is deciding quickly what deserves your time, learning those few things fast, and turning each one into something you can show.</p>
+<h2>The method</h2>
+<h3>Step 1. Triage in ten minutes</h3>
+<p>Ask four questions:</p>
+<ol>
+<li><strong>What problem does it solve that was not solved before?</strong> If you cannot find one, it is probably packaging.</li>
+<li><strong>Does it change a product decision?</strong> Would a PM design something differently because this exists? (New interaction pattern, new distribution channel, new cost structure, new capability.)</li>
+<li><strong>Who is behind it, and is it still moving?</strong> Check recent releases or commits. A trend with no updates in two months has usually peaked.</li>
+<li><strong>Can I try it in two hours?</strong> If setup alone takes a day, read a good write-up instead of installing it.</li>
+</ol>
+<p>Write the answers in <code>my-journey/trends.md</code> with today's date. Most trends stop here, and that is fine: you now know enough to talk about them.</p>
+<h3>Step 2. Two hours hands-on</h3>
+<p>For the trends that pass, set a two-hour limit. Install it, or use it, and do one real task with it. Keep notes on what surprised you and where it broke. Stop at two hours, even if it is going well.</p>
+<h3>Step 3. Write a teardown</h3>
+<p>Use five questions to analyze it as a product:</p>
+<ol>
+<li><strong>What problem does it solve?</strong> How did people do this before, and what does AI replace or improve?</li>
+<li><strong>What is the human-AI relationship?</strong> Is the AI deciding or suggesting? Where does the user keep control, and when does a person take over?</li>
+<li><strong>How does it earn trust?</strong> Transparency, a track record of accuracy, or low stakes when it is wrong?</li>
+<li><strong>Cold start and data flywheel.</strong> What happens with no data on day one, and how does usage make it better?</li>
+<li><strong>Business model.</strong> How does the capability turn into value: lower cost, higher conversion, a new thing people pay for?</li>
+</ol>
+<p>One page is enough. A teardown turns "I tried it" into "here is what I think about it", which is what interviews and colleagues actually want.</p>
+<h3>Step 4. Put an expiry date on it</h3>
+<p>At the bottom of each note, write: "Likely to be out of date by: ___." It keeps you honest about what you learned (the reasoning, which lasts) and what you only observed (the tool, which will change).</p>
+<h2>Keep your sources few</h2>
+<p>You do not need fifty newsletters. A small, steady set beats an endless feed:</p>
+<ul>
+<li>One or two primary sources from AI labs (their engineering blogs and release notes).</li>
+<li>One practitioner who writes carefully about what works in practice.</li>
+<li>One podcast for commute time.</li>
+<li>One source covering your local market.</li>
+<li>A monthly scan of trending open-source projects.</li>
+<li>A daily habit of one new term plus one review of an old one. A scheduled task can do this for you.</li>
+</ul>
+<h2>Exercise</h2>
+<ol>
+<li>Ask Claude what is currently trending in AI products. Claude will search, since this changes too fast to answer from memory.</li>
+<li>Triage three of them with the four questions. Save to <code>my-journey/trends.md</code>.</li>
+<li>Pick the one that best passes triage. Spend two hours on it and log what happened.</li>
+<li>Write a teardown with the five questions, using <code>templates/teardown.md</code>. Add an expiry line.</li>
+<li>Ask Claude to challenge your teardown: what would someone who disagrees say?</li>
+</ol>
+<h2>Check yourself</h2>
+<ul>
+<li>Which of your three trends did you decide not to pursue, and why?</li>
+<li>What in your teardown will still be true in a year, even if the product is gone?</li>
+<li>Did you stop at two hours?</li>
+</ul>
+<h2>From my journey (dated examples)</h2>
+<p><strong>March to April 2026: OpenClaw.</strong> An open-source personal AI assistant framework that connected agents to chat apps was everywhere that spring. I installed it, connected it to a DeepSeek model and studied its design for an interview. I also installed another agent framework that would not run on Windows, so I set up a virtual machine for it, then found I could not reach it remotely. In the end, Claude Code covered what I needed. The lesson I kept: the two-hour limit exists for a reason, and the teardown was worth more than the installation.</p>
+<p>By the autumn, OpenClaw was still releasing updates but was no longer the center of attention.</p>
+<p><strong>September to November 2026: personal agents and bots.</strong> Over a few weeks, large companies launched personal assistants and bots one after another, including Meta's Muse, OpenAI's Dots, Alibaba's Qwen moving toward a personal agent, and xAI's Grok Bot. The product question shifted from "can an agent do tasks" to "who owns the always-on assistant that lives where users already are". If you are reading this later, there is probably a newer wave. Run the same four questions on it.</p>
+  <nav class="prevnext"><a class="pn prev" href="04-learn-the-methods.html"><small>Previous</small>Learn the Methods Through Your Project</a><a class="pn next" href="06-industry-crash-course.html"><small>Next</small>Industry Crash Course</a></nav>
+</article>
+</main>
+<footer class="footer">
+  <p>By Lucy Li, AI product manager. <a href="https://github.com/lucyli-lpl">@lucyli-lpl</a> · <a href="https://github.com/lucyli-lpl/zero2aipm">github.com/lucyli-lpl/zero2aipm</a></p>
+</footer>
+<script>
+document.querySelectorAll('.lang-switch').forEach(function (a) {
+  a.addEventListener('click', function () {
+    try { localStorage.setItem('z2a-lang', a.dataset.lang); } catch (e) {}
+  });
+});
+</script>
+</body>
+</html>

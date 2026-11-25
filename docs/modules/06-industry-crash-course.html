@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>06 · Industry Crash Course · zero2aipm</title>
+<meta name="description" content="AI is general, but AI products live inside industries. Learn a new industry well enough for an interview in one or two days.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html">zero2aipm</a>
+  <nav class="topnav">
+    <a href="https://github.com/lucyli-lpl/zero2aipm" class="ghost">GitHub</a>
+    <a href="../../zh/modules/06-industry-crash-course.html" class="lang-switch" data-lang="zh">中文</a>
+  </nav>
+</header>
+<main class="module-layout">
+<aside class="sidebar">
+  <a class="back" href="../index.html">Home</a>
+  <p class="side-title">Modules</p>
+  <ol><li><a href="00-start-here.html"><span>00</span><em>Start Here</em></a></li><li><a href="01-ai-as-your-tutor.html"><span>01</span><em>AI as Your Tutor</em></a></li><li><a href="02-build-your-map.html"><span>02</span><em>Build Your Map</em></a></li><li><a href="03-ship-in-week-one.html"><span>03</span><em>Ship in Week One</em></a></li><li><a href="04-learn-the-methods.html"><span>04</span><em>Learn the Methods Through Your Project</em></a></li><li><a href="05-chase-a-trend.html"><span>05</span><em>Chase a Trend Without Drowning</em></a></li><li class="active"><a href="06-industry-crash-course.html"><span>06</span><em>Industry Crash Course</em></a></li><li><a href="07-record-and-distill.html"><span>07</span><em>Record and Distill</em></a></li><li><a href="08-into-the-job-hunt.html"><span>08</span><em>Into the Job Hunt</em></a></li></ol>
+</aside>
+<article class="lesson">
+  <p class="eyebrow">Module 06</p>
+  <h1>Industry Crash Course</h1>
+  <p class="lede">AI is general, but AI products live inside industries. Learn a new industry well enough for an interview in one or two days.</p>
+  <dl class="meta"><dt>Time</dt><dd>1 to 2 days per industry</dd><dt>You leave with</dt><dd>A one-page industry brief with three AI opportunities</dd></dl>
+  <div class="claude-note">Do this module with Claude: open the repository in Claude Code and type <code>start the course</code> or <code>continue</code>.</div>
+  <h2>Why this module</h2>
+<p>When I interviewed for AI product roles, almost every company was in a different industry: fast-moving consumer goods, B2B sales software, food delivery, restaurants, financial technology. AI techniques are general. AI products are not. An interviewer will not ask "what is RAG?" nearly as often as "where would you use AI in our business?"</p>
+<p>You cannot become an expert in every industry before an interview. You can learn enough, in a day or two, to talk about the business the way the people inside it do.</p>
+<h2>The method: a six-part brief</h2>
+<p>For each industry, fill in these six parts:</p>
+<ol>
+<li><strong>The core business flow.</strong> Who does what, in what order, from the first step to money coming in. Draw it as a chain of five to eight steps.</li>
+<li><strong>The key metrics.</strong> The three to five numbers the business lives by.</li>
+<li><strong>The decision pain points.</strong> Where people make costly decisions by gut feel, with missing data, or too slowly. This is where AI usually fits.</li>
+<li><strong>Where AI fits.</strong> Two or three concrete scenarios tied to specific steps and pain points. For each, say what the AI does and what a person still decides.</li>
+<li><strong>What a PM must understand.</strong> Constraints that change the design: regulation, data access, who the real user is, how the product is sold.</li>
+<li><strong>Five questions before recommending AI.</strong> Does this need AI, or would a simpler tool work? What is the human-AI relationship? Is there data, and can a data flywheel form? How will users come to trust it? How does it turn into value: lower cost or new growth?</li>
+</ol>
+<p>Then add one line on the company itself: where it sits in this industry, and what its leaders have said publicly about AI.</p>
+<h2>Worked examples (from my 2026 interview prep, simplified)</h2>
+<p><strong>Fast-moving consumer goods, route to market.</strong> Flow: manufacturer, distributors, sales reps visiting stores, store shelves, consumers. Metrics: distribution coverage, shelf share, out-of-stock rate, rep productivity. Pain points: deciding which stores to visit and what to push, checking shelf compliance by hand. AI fits: computer vision on shelf photos for compliance and stock, demand forecasting per store, suggested visit routes and orders. PM must understand: reps are the real users, and if the tool slows their visits they will not use it.</p>
+<p><strong>B2B sales, go to market.</strong> Flow: lead, qualification, meetings, proposal, negotiation, close, renewal. Metrics: pipeline value, conversion by stage, sales cycle length. Pain points: reps spend time on the wrong leads and on admin. AI fits: lead scoring and account research, meeting preparation and follow-up drafts, pipeline risk alerts. PM must understand: data lives in the CRM, and reps distrust scores they cannot explain.</p>
+<p><strong>Food delivery, merchant side.</strong> Flow: merchant onboarding, menu and store setup, promotions, orders, delivery, ratings. Metrics: merchant activation, order volume, rating, retention. Pain points: new stores do not know how to set up menus and images or which promotions to join. Account managers cover too many merchants. AI fits: generating and scoring menu images, explaining platform rules in plain language, prioritizing which merchants an account manager should help this week. PM must understand: margins are thin, and merchants judge any tool by whether orders go up.</p>
+<h2>Exercise</h2>
+<ol>
+<li>Pick a company you would like to interview with, or one in the industry you know least.</li>
+<li>Ask Claude to research the industry and company with you. Claude will search for current information and show sources. Fill in the six parts yourself, using what you find.</li>
+<li>Save it as <code>my-journey/industries/&lt;industry&gt;.md</code> using <code>templates/industry-brief.md</code>.</li>
+<li>Practice: ask Claude to play the interviewer and ask, "Where would you use AI in our business?" Answer out loud or in writing in under two minutes.</li>
+<li>Ask Claude to point out where your answer sounded like an outsider.</li>
+</ol>
+<h2>Check yourself</h2>
+<ul>
+<li>Can you draw the industry's core flow from memory?</li>
+<li>Is each of your AI scenarios tied to a specific step and a specific metric?</li>
+<li>Did you say what a person still decides in each scenario?</li>
+</ul>
+<h2>From my journey</h2>
+<p>I used the same structure for every new industry. The brief for consumer goods route to market took most of a day. By the fourth industry, a brief took a few hours, because the six parts made me ask the right questions instead of reading everything. In interviews, being able to say "your reps are the real users, so the AI has to save them time on each visit" did more than any technical answer.</p>
+  <nav class="prevnext"><a class="pn prev" href="05-chase-a-trend.html"><small>Previous</small>Chase a Trend Without Drowning</a><a class="pn next" href="07-record-and-distill.html"><small>Next</small>Record and Distill</a></nav>
+</article>
+</main>
+<footer class="footer">
+  <p>By Lucy Li, AI product manager. <a href="https://github.com/lucyli-lpl">@lucyli-lpl</a> · <a href="https://github.com/lucyli-lpl/zero2aipm">github.com/lucyli-lpl/zero2aipm</a></p>
+</footer>
+<script>
+document.querySelectorAll('.lang-switch').forEach(function (a) {
+  a.addEventListener('click', function () {
+    try { localStorage.setItem('z2a-lang', a.dataset.lang); } catch (e) {}
+  });
+});
+</script>
+</body>
+</html>
