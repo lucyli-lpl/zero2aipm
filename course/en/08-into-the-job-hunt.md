@@ -55,3 +55,5 @@ Two skills built from this journey will live in the `skills/` folder of this rep
 ## From my journey
 
 I interviewed across several industries in March and April 2026. My first answers about my career gap were defensive and did not work. Rewriting them as "here is what I reflected on and what I built once I refocused" did. The self-introduction I finally used was one version for every interviewer, and the time I saved went into preparing for interruptions. Six weeks after my first weekend of building, I accepted an AI product manager offer.
+
+The job search itself took about a month and a half: 49 applications, 9 interviews and 4 offers, across both AI product manager and AI product operations roles. I share these numbers as a realistic reference. When you are switching careers, most applications get no reply, and that is normal. The two conversions worth watching are resume to interview, which depends on how well your resume fits the role, and interview to offer, which depends on whether you can explain the decisions you made.

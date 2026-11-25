@@ -58,6 +58,20 @@ One page, five headings:
 
 Interviewers ask about decisions more than features. This record is what you will talk about.
 
+### No AI project yet? Build one, do not invent one
+
+Many people moving into AI product work are tempted to "package" an AI project on their resume. It does not work. Interviewers always dig into AI projects: "Why did you design it this way?" "How did you evaluate it?" "What went wrong?" An invented project falls apart within two or three questions.
+
+What works is running the method above: pick a real problem, ship a first version someone can open within two weeks, and write the decision record. Then you can explain the "why" behind every line on your resume.
+
+When you pick a project, check that it will hold up in an interview:
+
+- **A trade-off to discuss**: you made at least one "X instead of Y" decision.
+- **An evaluation to discuss**: you know how to tell whether it works, even if it is just 20 test questions.
+- **A failure to discuss**: you know where it breaks and what you did about it.
+
+This is also the line between polishing and inventing. Describing what you really did more clearly and with more weight is polishing. Describing what you did not do is inventing.
+
 ## Tool snapshot (March 2026, check what is current)
 
 This is what I used. Expect several of these to have changed by the time you read this. Ask your tutor to check what is current before you pick.
