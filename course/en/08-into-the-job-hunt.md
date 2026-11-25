@@ -35,12 +35,12 @@ By now you have shipped products, written decision records, analyzed failures, t
 
 ## Exercise
 
-1. With Claude, collect your evidence: projects, decision records, eval results, teardowns, industry briefs and published work.
-2. Ask Claude to research what AI PM or AI product operations job descriptions currently ask for in your market. Claude will search and show sources.
+1. With your tutor, collect your evidence: projects, decision records, eval results, teardowns, industry briefs and published work.
+2. Ask your tutor to research what AI PM or AI product operations job descriptions currently ask for in your market. Your tutor will search and show sources.
 3. Draft your storyline sentence and your AI capabilities section. Every line needs evidence.
-4. Write a two-minute self-introduction. Ask Claude to interrupt you at the project section, as a real interviewer would.
-5. Pick three stories: one shipped product, one failure you fixed, one industry recommendation. Practice each with Claude playing a skeptical interviewer.
-6. After each real interview, write down every question and how you answered. Review it with Claude.
+4. Write a two-minute self-introduction. Ask your tutor to interrupt you at the project section, as a real interviewer would.
+5. Pick three stories: one shipped product, one failure you fixed, one industry recommendation. Practice each with your tutor playing a skeptical interviewer.
+6. After each real interview, write down every question and how you answered. Review it with your tutor.
 
 ## Check yourself
 

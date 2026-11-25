@@ -94,11 +94,11 @@ Start with the first two. Add the rest when your project needs them.
 ## Exercise
 
 1. Pick the product from Module 3 you care most about.
-2. With Claude, list 10 to 20 scenarios a user might bring to it. Place each in a zone. Save as `my-journey/projects/<name>-boundaries.md`.
+2. With your tutor, list 10 to 20 scenarios a user might bring to it. Place each in a zone. Save as `my-journey/projects/<name>-boundaries.md`.
 3. Turn the scenarios into an eval set (`templates/eval-set.csv`): input, expected behavior, pass/fail rule.
 4. Run your product against it. Record results honestly.
-5. For every failure, write one line on what went wrong. Ask Claude to help you group them into categories. Fix the largest category and run the set again.
-6. Take Claude's quiz on this module.
+5. For every failure, write one line on what went wrong. Ask your tutor to help you group them into categories. Fix the largest category and run the set again.
+6. Take your tutor's quiz on this module.
 
 ## Check yourself
 

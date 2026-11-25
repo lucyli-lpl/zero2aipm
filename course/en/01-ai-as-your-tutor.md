@@ -45,8 +45,8 @@ Once you have rebuilt it this way, follow-up ideas stop being new vocabulary. "H
 ## Exercise
 
 1. Pick three terms you have seen but could not explain. If you have none, use: context window, function calling, evals.
-2. For each one, ask Claude to teach it the reconstruct way (Claude in this course does this by default).
-3. Take the quiz Claude gives you after each one. Write your answers before asking for the correct ones.
+2. For each one, ask your tutor to teach it the reconstruct way (your tutor in this course does this by default).
+3. Take the quiz your tutor gives you after each one. Write your answers before asking for the correct ones.
 4. Add each term to `my-journey/glossary.md` in one or two plain sentences, with the date.
 5. Log the session in your learning log.
 

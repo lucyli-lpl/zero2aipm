@@ -60,11 +60,11 @@ You do not need fifty newsletters. A small, steady set beats an endless feed:
 
 ## Exercise
 
-1. Ask Claude what is currently trending in AI products. Claude will search, since this changes too fast to answer from memory.
+1. Ask your tutor what is currently trending in AI products. Your tutor will search, since this changes too fast to answer from memory.
 2. Triage three of them with the four questions. Save to `my-journey/trends.md`.
 3. Pick the one that best passes triage. Spend two hours on it and log what happened.
 4. Write a teardown with the five questions, using `templates/teardown.md`. Add an expiry line.
-5. Ask Claude to challenge your teardown: what would someone who disagrees say?
+5. Ask your tutor to challenge your teardown: what would someone who disagrees say?
 
 ## Check yourself
 

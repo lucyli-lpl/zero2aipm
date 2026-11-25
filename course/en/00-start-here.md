@@ -17,14 +17,16 @@ Six weeks later I had an AI product manager offer. This course is the path I too
 Two things to know before you start:
 
 - **This course teaches a path and methods, not a fixed body of knowledge.** AI tools and buzzwords change every few months. Anything in these modules that names a specific tool, model or trend carries a date. Treat those as examples of the method, and check what is current when you get there.
-- **You learn by doing, with Claude as your tutor.** Every module ends with an exercise you do yourself, on your own files. Claude explains, asks questions and checks your work. It does not do the exercise for you.
+- **You learn by doing, with an AI agent as your tutor.** Every module ends with an exercise you do yourself, on your own files. Your tutor explains, asks questions and checks your work. It does not do the exercise for you.
 
 ## How the course runs
 
-1. Clone or fork this repository and open it in Claude Code (or the Code tab of the Claude desktop app).
-2. Type `start the course`. Claude reads the course instructions, asks a few questions about your background, and walks you through one module at a time.
-3. Your work goes into the `my-journey/` folder: your learning log, glossary, project notes and decision records. Claude keeps track of your progress in `my-journey/progress.md`.
-4. You can stop at any point. Next time, type `continue` and Claude picks up where you left off.
+1. Clone or fork this repository and open it in an AI coding agent that can read and write files, such as Claude Code, Codex, Gemini CLI or Cursor.
+2. Type `start the course`. Your tutor reads the course instructions, asks a few questions about your background, and walks you through one module at a time.
+3. Your work goes into the `my-journey/` folder: your learning log, glossary, project notes and decision records. Your tutor keeps track of your progress in `my-journey/progress.md`.
+4. You can stop at any point. Next time, type `continue` and your tutor picks up where you left off.
+
+Only have a chat app such as ChatGPT or Gemini? Use the paste-in prompt in `TUTOR_PROMPT.md` and paste one module at a time. It works, but you keep your own files and paste them in when your tutor asks.
 
 There are nine modules:
 
@@ -60,11 +62,11 @@ Keep it boring. A log you update every day beats a beautiful one you abandon.
 
 ## Exercise
 
-Work through these with Claude:
+Work through these with your tutor:
 
-1. Tell Claude your background in two or three sentences: your current role, what you already know about AI, and why you want to move into AI product work.
-2. Claude creates `my-journey/learning-log.md` from the template in `templates/`. Add your first entry: what you did today to start this course.
-3. Write down one sentence answering: "In six weeks, I want to be able to show ___." Make it something someone else could look at, such as a live product, a written teardown or an interview you passed. Claude saves it at the top of your log.
+1. Tell your tutor your background in two or three sentences: your current role, what you already know about AI, and why you want to move into AI product work.
+2. Your tutor creates `my-journey/learning-log.md` from the template in `templates/`. Add your first entry: what you did today to start this course.
+3. Write down one sentence answering: "In six weeks, I want to be able to show ___." Make it something someone else could look at, such as a live product, a written teardown or an interview you passed. Your tutor saves it at the top of your log.
 
 ## Check yourself
 

@@ -60,7 +60,7 @@ Interviewers ask about decisions more than features. This record is what you wil
 
 ## Tool snapshot (March 2026, check what is current)
 
-This is what I used. Expect several of these to have changed by the time you read this. Ask Claude to check what is current before you pick.
+This is what I used. Expect several of these to have changed by the time you read this. Ask your tutor to check what is current before you pick.
 
 | Step | What I used then |
 |---|---|
@@ -75,11 +75,11 @@ This is what I used. Expect several of these to have changed by the time you rea
 
 ## Exercise
 
-1. Tell Claude about yourself and three possible project ideas. Claude will run each through the three questions and help you pick a complementary set.
-2. For the first project, write a one-paragraph spec with Claude's help, then build it. Claude helps when you are stuck, but you make the decisions.
+1. Tell your tutor about yourself and three possible project ideas. Your tutor will run each through the three questions and help you pick a complementary set.
+2. For the first project, write a one-paragraph spec with your tutor's help, then build it. Your tutor helps when you are stuck, but you make the decisions.
 3. Put it online and paste the link into your learning log.
 4. Write the decision record in `my-journey/projects/<project-name>.md` using `templates/decision-record.md`.
-5. Repeat for the second and third projects. Before each one, ask Claude: "What did the last project not train?"
+5. Repeat for the second and third projects. Before each one, ask your tutor: "What did the last project not train?"
 
 ## Check yourself
 

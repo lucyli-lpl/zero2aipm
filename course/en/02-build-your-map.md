@@ -43,11 +43,11 @@ Research-heavy topics such as diffusion models, GANs, liquid neural networks or 
 
 ## Exercise
 
-1. Ask Claude to help you choose one report. Tell it which industry you are most interested in. Claude will suggest a few recent ones and check that they are publicly available.
+1. Ask your tutor to help you choose one report. Tell it which industry you are most interested in. Your tutor will suggest a few recent ones and check that they are publicly available.
 2. Read it over several days. Every unknown term goes into `my-journey/glossary.md` with a date and a one-line plain explanation.
-3. When you reach 30 terms, ask Claude to sort your glossary into the six layers above. Look at which layer is thinnest.
+3. When you reach 30 terms, ask your tutor to sort your glossary into the six layers above. Look at which layer is thinnest.
 4. Draw your map: a single page (a list, a table or a sketch) of the six layers with your terms on them. Save it as `my-journey/map.md`.
-5. Ask Claude to quiz you on ten random glossary terms. Re-learn the ones you miss.
+5. Ask your tutor to quiz you on ten random glossary terms. Re-learn the ones you miss.
 
 ## Check yourself
 

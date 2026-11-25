@@ -38,10 +38,10 @@ Then add one line on the company itself: where it sits in this industry, and wha
 ## Exercise
 
 1. Pick a company you would like to interview with, or one in the industry you know least.
-2. Ask Claude to research the industry and company with you. Claude will search for current information and show sources. Fill in the six parts yourself, using what you find.
+2. Ask your tutor to research the industry and company with you. Your tutor will search for current information and show sources. Fill in the six parts yourself, using what you find.
 3. Save it as `my-journey/industries/<industry>.md` using `templates/industry-brief.md`.
-4. Practice: ask Claude to play the interviewer and ask, "Where would you use AI in our business?" Answer out loud or in writing in under two minutes.
-5. Ask Claude to point out where your answer sounded like an outsider.
+4. Practice: ask your tutor to play the interviewer and ask, "Where would you use AI in our business?" Answer out loud or in writing in under two minutes.
+5. Ask your tutor to point out where your answer sounded like an outsider.
 
 ## Check yourself
 

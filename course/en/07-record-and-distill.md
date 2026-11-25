@@ -40,7 +40,7 @@ Two cautions:
 
 ## Exercise
 
-1. Read your learning log and decision records with Claude. Ask it to propose five candidate lessons. Keep only the ones you agree with, and rewrite them in your own words in `my-journey/lessons.md`.
+1. Read your learning log and decision records with your tutor. Ask it to propose five candidate lessons. Keep only the ones you agree with, and rewrite them in your own words in `my-journey/lessons.md`.
 2. Choose one lesson or project and write a short public piece about it: a post, a thread or a README. Mark sources and hypotheses.
 3. Choose one thing you did more than twice (an analysis, a checklist, a prompt) and turn it into a reusable asset: a template, a checklist or an AI skill. Save it under `my-journey/assets/`.
 4. Put a recurring reminder in your calendar: 30 minutes every week to update your lessons.

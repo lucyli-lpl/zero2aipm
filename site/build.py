@@ -23,35 +23,35 @@ UI = {
         "title": "From Zero to AI Product Manager",
         "brand": "zero2aipm",
         "switch_label": "中文",
-        "tagline": "An interactive course with Claude as your tutor. Learn by shipping, not by reading.",
+        "tagline": "An interactive course with an AI agent as your tutor. Learn by shipping, not by reading.",
         "hero_note": "Built from a real path: a fintech PM with a career gap shipped three small AI products in a few weeks and had an AI PM offer six weeks later.",
         "cta_start": "How to start",
         "cta_read": "Read Module 0",
         "cta_github": "View on GitHub",
         "how_title": "How it works",
         "how": [
-            ("Fork and open", "Fork the repository and open it in Claude Code, or the Code tab of the Claude desktop app."),
-            ("Type start the course", "Claude reads the course, asks about your background and teaches one module at a time."),
-            ("Do the work yourself", "Each module ends with an exercise on your own files. Claude explains, quizzes and reviews. It does not do it for you."),
+            ("Fork and open", "Fork the repository and open it in an AI coding agent: Claude Code, Codex, Gemini CLI, Cursor or similar."),
+            ("Type start the course", "Your tutor reads the course, asks about your background and teaches one module at a time."),
+            ("Do the work yourself", "Each module ends with an exercise on your own files. Your tutor explains, quizzes and reviews. It does not do it for you."),
         ],
         "path_title": "The path",
         "path_sub": "Nine modules. Each one leaves you with something you can show.",
         "you_leave": "You leave with",
         "time": "Time",
         "dated_title": "Why everything has a date",
-        "dated_body": "AI tools and buzzwords change every few months. This course teaches the path and the methods. Every tool, model or trend it mentions is dated and used as an example. When you reach it, Claude checks what is current.",
+        "dated_body": "AI tools and buzzwords change every few months. This course teaches the path and the methods. Every tool, model or trend it mentions is dated and used as an example. When you reach it, your tutor checks what is current.",
         "start_title": "Start in three steps",
         "start_steps": [
             "Fork <a href=\"{repo}\">the repository</a>, then clone your fork.",
-            "Open the folder in Claude Code: <code>claude</code>",
+            "Open the folder in your agent, for example <code>claude</code>, <code>codex</code> or <code>gemini</code>.",
             "Type <code>start the course</code>. Next time, type <code>continue</code>.",
         ],
-        "start_note": "You can read every module here without Claude, but the exercises are designed to be done with it.",
+        "start_note": "Only have a chat app such as ChatGPT or Gemini? Use the paste-in prompt in <a href='{repo}/blob/main/TUTOR_PROMPT.md'>TUTOR_PROMPT.md</a> and paste one module at a time.",
         "footer": "By Lucy Li, AI product manager.",
         "modules": "Modules",
         "prev": "Previous",
         "next": "Next",
-        "do_with_claude": "Do this module with Claude: open the repository in Claude Code and type <code>start the course</code> or <code>continue</code>.",
+        "do_with_claude": "Do this module with your AI tutor: open the repository in your coding agent and type <code>start the course</code> or <code>continue</code>.",
         "home": "Home",
         "terminal": (
             '<div class="you">&gt; start the course</div>'
@@ -65,35 +65,35 @@ UI = {
         "title": "从 0 到 AI 产品经理",
         "brand": "zero2aipm",
         "switch_label": "English",
-        "tagline": "一门让 Claude 当导师的互动课程。靠上线产品来学，而不是靠读。",
+        "tagline": "一门让 AI Agent 当导师的互动课程。靠上线产品来学，而不是靠读。",
         "hero_note": "来自一条真实的路径：一个有空窗期的金融科技产品经理，几周内做出并上线了三个小 AI 产品，六周后拿到 AI 产品经理 offer。",
         "cta_start": "怎么开始",
         "cta_read": "阅读模块 0",
         "cta_github": "在 GitHub 查看",
         "how_title": "怎么学",
         "how": [
-            ("Fork 并打开", "Fork 这个仓库，在 Claude Code 或 Claude 桌面 App 的 Code 页里打开。"),
-            ("输入「开始课程」", "Claude 会读取课程，问问你的背景，然后一次带你学一个模块。"),
-            ("自己动手做", "每个模块都以一个在你自己文件上完成的练习结束。Claude 讲解、出题、点评，但不替你做。"),
+            ("Fork 并打开", "Fork 这个仓库，在一个 AI 编程 Agent 里打开：Claude Code、Codex、Gemini CLI、Cursor 等都可以。"),
+            ("输入「开始课程」", "AI 导师会读取课程，问问你的背景，然后一次带你学一个模块。"),
+            ("自己动手做", "每个模块都以一个在你自己文件上完成的练习结束。AI 导师讲解、出题、点评，但不替你做。"),
         ],
         "path_title": "学习路径",
         "path_sub": "九个模块，每个都让你带走一样能拿出来的东西。",
         "you_leave": "学完你会有",
         "time": "时间",
         "dated_title": "为什么处处标着日期",
-        "dated_body": "AI 工具和热词每隔几个月就换一轮。这门课教的是路径和方法。课程里提到的每个工具、模型和趋势都标了日期，作为例子使用。学到那里时，Claude 会帮你确认现在的情况。",
+        "dated_body": "AI 工具和热词每隔几个月就换一轮。这门课教的是路径和方法。课程里提到的每个工具、模型和趋势都标了日期，作为例子使用。学到那里时，AI 导师会帮你确认现在的情况。",
         "start_title": "三步开始",
         "start_steps": [
             "Fork <a href=\"{repo}\">这个仓库</a>，再克隆你 fork 出来的仓库。",
-            "在文件夹里打开 Claude Code：<code>claude</code>",
+            "在文件夹里打开你的 Agent，比如 <code>claude</code>、<code>codex</code> 或 <code>gemini</code>。",
             "输入<code>开始课程</code>。下次接着学，输入<code>继续</code>。",
         ],
-        "start_note": "不用 Claude 也能在这里读完所有模块，但练习是按和 Claude 一起完成来设计的。",
+        "start_note": "只有 ChatGPT、Gemini 这类聊天 App？用 <a href='{repo}/blob/main/TUTOR_PROMPT.md'>TUTOR_PROMPT.md</a> 里的提示词，一次粘贴一个模块来学。",
         "footer": "作者 Lucy Li，AI 产品经理。",
         "modules": "模块",
         "prev": "上一个",
         "next": "下一个",
-        "do_with_claude": "和 Claude 一起学这个模块：在 Claude Code 里打开仓库，输入<code>开始课程</code>或<code>继续</code>。",
+        "do_with_claude": "和 AI 导师一起学这个模块：在你的编程 Agent 里打开仓库，输入<code>开始课程</code>或<code>继续</code>。",
         "home": "首页",
         "terminal": (
             '<div class="you">&gt; 开始课程</div>'
@@ -218,7 +218,7 @@ try { if (localStorage.getItem('z2a-lang') === 'zh' && !location.hash) { locatio
 <section class="block" id="start">
   <h2>{t['start_title']}</h2>
   <ol class="start">{steps}</ol>
-  <p class="sub">{t['start_note']}</p>
+  <p class="sub">{t['start_note'].format(repo=REPO)}</p>
 </section>
 </main>"""
     counterpart = "zh/index.html" if lang == "en" else "../index.html"
