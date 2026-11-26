@@ -47,13 +47,13 @@
   <div class="cards"><a class="card" href="modules/00-start-here.html">
   <span class="card-no">00</span>
   <h3>从这里开始</h3>
-  <p>课程怎么学，以及撑起后面一切的一个习惯：学习日志。</p>
-  <dl><dt>学完你会有</dt><dd>建好学习日志，写下第一条</dd><dt>时间</dt><dd>30 分钟</dd></dl>
+  <p>这门课怎么学，以及唯一需要先养成的习惯：学习日志。</p>
+  <dl><dt>学完你会有</dt><dd>建好学习日志，写下第一条</dd><dt>时间</dt><dd>15 分钟</dd></dl>
 </a><a class="card" href="modules/01-ai-as-your-tutor.html">
   <span class="card-no">01</span>
-  <h3>把 AI 当导师</h3>
-  <p>从概念要解决的问题出发把它重新推导一遍，再让 AI 来考你。</p>
-  <dl><dt>学完你会有</dt><dd>用推导法学会三个概念，每个都做过自测</dd><dt>时间</dt><dd>1 小时</dd></dl>
+  <h3>AI 知识全景图</h3>
+  <p>先看三个入门视频，再顺着一张 12 个节点的路线图，把 AI 应用的核心名词走一遍。</p>
+  <dl><dt>学完你会有</dt><dd>看完入门视频，走完全景图，名词库里有第一批词条</dd><dt>时间</dt><dd>3 到 5 小时，可以分几天</dd></dl>
 </a><a class="card" href="modules/02-build-your-map.html">
   <span class="card-no">02</span>
   <h3>建立地图</h3>
@@ -105,6 +105,43 @@
   <p>作者 Lucy Li，AI 产品经理。 <a href="https://github.com/lucyli-lpl">@lucyli-lpl</a> · <a href="https://github.com/lucyli-lpl/zero2aipm">github.com/lucyli-lpl/zero2aipm</a></p>
 </footer>
 <script>
+document.querySelectorAll('.quiz').forEach(function (qz) {
+  var right = 0, done = 0, total = +qz.dataset.total;
+  qz.querySelectorAll('.q').forEach(function (q) {
+    q.querySelectorAll('.opt').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (q.classList.contains('answered')) return;
+        q.classList.add('answered');
+        var ok = b.dataset.ok === '1';
+        b.classList.add(ok ? 'right' : 'wrong');
+        q.querySelectorAll('.opt').forEach(function (o) { if (o.dataset.ok === '1') o.classList.add('right'); o.disabled = true; });
+        var ex = q.querySelector('.explain'), v = ex.querySelector('.verdict');
+        v.textContent = ok ? v.dataset.right : v.dataset.wrong;
+        ex.classList.add(ok ? 'is-right' : 'is-wrong');
+        ex.hidden = false;
+        done++; if (ok) right++;
+        if (done === total) {
+          var sc = qz.querySelector('.quiz-score');
+          sc.textContent = qz.dataset.score.replace('{right}', right).replace('{total}', total);
+          sc.hidden = false;
+        }
+      });
+    });
+  });
+});
+document.querySelectorAll('.kmap').forEach(function (km) {
+  km.querySelectorAll('.kmap-tools button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      km.querySelectorAll('details.node').forEach(function (d) { d.open = b.dataset.act === 'open'; });
+    });
+  });
+  km.querySelectorAll('.ov-node').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var d = document.querySelector(a.getAttribute('href'));
+      if (d) d.open = true;
+    });
+  });
+});
 document.querySelectorAll('.lang-switch').forEach(function (a) {
   a.addEventListener('click', function () {
     try { localStorage.setItem('z2a-lang', a.dataset.lang); } catch (e) {}

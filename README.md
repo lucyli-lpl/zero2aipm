@@ -19,7 +19,7 @@ It is built from a real path: in March 2026 a fintech product manager with a car
 | # | Module | What you leave with |
 |---|---|---|
 | 0 | Start Here | A learning log |
-| 1 | AI as Your Tutor | A way to learn any new concept in 20 minutes |
+| 1 | The AI Knowledge Map | Starter videos watched and one walk through the core terms of AI applications |
 | 2 | Build Your Map | A personal glossary and a picture of the field |
 | 3 | Ship in Week One | Three small, live AI products |
 | 4 | Learn the Methods Through Your Project | An eval set and an error analysis for your own product |

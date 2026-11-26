@@ -7,7 +7,7 @@ Six-week goal / 六周目标:
 | Module | Status | What I produced | Revisit |
 |---|---|---|---|
 | 00 Start Here / 从这里开始 | | | |
-| 01 AI as Your Tutor / 把 AI 当导师 | | | |
+| 01 The AI Knowledge Map / AI 知识全景图 | | | |
 | 02 Build Your Map / 建立地图 | | | |
 | 03 Ship in Week One / 第一周就上线 | | | |
 | 04 Learn the Methods / 带着项目学方法论 | | | |

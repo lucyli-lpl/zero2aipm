@@ -1,0 +1,255 @@
+# AI application knowledge map (English)
+# The website renders this as an interactive route; when you learn in an agent, the tutor reads this file directly.
+# Dates and examples are as of November 2026. When a new term appears, add a node or a branch to the right stage.
+
+title: "The AI application knowledge map"
+intro: "Twelve core nodes, in the order they appeared. Each one exists to solve a problem the previous one left open. Walk the spine once, then open the branches you need."
+labels:
+  why: "Why it appeared"
+  branches: "Branches"
+  resources: "Recommended"
+  optional: "Good to know"
+  expand_all: "Expand all"
+  collapse_all: "Collapse all"
+
+stages:
+  - name: "The model itself"
+    span: "2017 — 2022"
+    summary: "What a large model is, and how to talk to it"
+    nodes:
+      - id: llm
+        year: "2017"
+        name: "Large language models (LLMs) and the Transformer"
+        oneliner: "A model that has read huge amounts of text and generates content by predicting the next word. The Transformer is the architecture underneath."
+        why: "Earlier language models processed words one at a time, forgot the start of long texts, and could not be trained in parallel. The 2017 paper \"Attention Is All You Need\" let every word look at every other word directly through attention. Models could remember long text and train in parallel, so they could grow much larger. The large-model era starts here."
+        branches:
+          - name: "Pre-training"
+            note: "Training on huge amounts of web text so the model has knowledge. Like going from birth to a university degree: well read, but not yet good at following instructions."
+          - name: "Post-training (SFT, RLHF, DPO)"
+            note: "All training after pre-training. SFT teaches it to follow instructions; RLHF and DPO make it safer and more useful. Like on-the-job training."
+          - name: "Tokens and the context window"
+            note: "Models read, write and bill in tokens. The context window is how much they can see at once."
+          - name: "Scaling laws"
+            note: "More compute, parameters and data in training make a stronger model. Since 2024, giving the model more time to think at answer time also helps."
+          - name: "Reasoning models"
+            note: "Models that think internally before answering, trading time for better answers."
+          - name: "Hallucination"
+            note: "The model confidently makes things up. Many later techniques exist to reduce it."
+        resources:
+          - title: "Bilibili @唐吉坷德拉曼查的英豪: explainer on \"Attention Is All You Need\" (highly recommended; all his videos are worth watching; Chinese)"
+            url: "https://search.bilibili.com/upuser?keyword=%E5%94%90%E5%90%89%E5%9D%B7%E5%BE%B7%E6%8B%89%E6%9B%BC%E6%9F%A5%E7%9A%84%E8%8B%B1%E8%B1%AA"
+            kind: "Video"
+          - title: "Mu Li: close reading of the Transformer paper (for going deeper; Chinese)"
+            url: "https://www.bilibili.com/video/BV1pu411o7BE"
+            kind: "Video"
+          - title: "Paper: Attention Is All You Need"
+            url: "https://arxiv.org/abs/1706.03762"
+            kind: "Paper"
+      - id: prompt
+        year: "2020 — 2022"
+        name: "Prompt engineering"
+        oneliner: "Designing the instructions you give the model so it produces what you want more accurately and predictably. It does not change the model, so it is the cheapest lever."
+        why: "As models grew, people found that the same model gave very different answers depending on how you asked. Retraining was expensive, so the first effort went into how to ask: give it a role, give examples, ask it to think step by step."
+        branches:
+          - name: "System and user prompts"
+            note: "The system prompt sets rules and persona; the user prompt is each specific request."
+          - name: "Few-shot examples"
+            note: "Put a few examples in the prompt so the model copies the format and style."
+          - name: "Chain of thought (CoT)"
+            note: "Ask the model to write out its reasoning before the answer. Accuracy on hard problems improves noticeably."
+        resources:
+          - title: "Claude prompting best practices (official docs)"
+            url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices"
+            kind: "Docs"
+          - title: "Prompt engineering study notes (long article, Chinese)"
+            url: "https://www.aneasystone.com/archives/2024/01/prompt-engineering-notes.html"
+            kind: "Article"
+
+  - name: "Teaching the model your data"
+    span: "2020 — 2023"
+    summary: "A general model knows nothing about your company. How to fill that gap"
+    nodes:
+      - id: finetune
+        year: "2021"
+        name: "Fine-tuning"
+        oneliner: "Training an existing model again on specific data so it suits a task better. It changes the model's parameters."
+        why: "Prompts can only do so much: some formats, styles and professional tones stay unreliable however you ask. Training from scratch is far too expensive, so you give an existing model extra training. LoRA trains only a small set of parameters, which brings the cost within reach of individuals and small teams."
+        branches:
+          - name: "SFT and LoRA"
+            note: "SFT trains on instruction-and-answer pairs. LoRA trains only a few low-rank parameters; most domain projects use it today."
+          - name: "Fine-tuning vs continued pre-training"
+            note: "Fine-tuning teaches the model how to answer; continued pre-training teaches it new knowledge. For format and tone, fine-tune. For a new domain, use continued pre-training or RAG."
+          - name: "Quantization, distillation, pruning"
+            note: "Ways to make models smaller and faster. Companies most often use quantization (an instant cost cut) and distillation (a small dedicated model)."
+        resources:
+          - title: "Bilibili: SFT fine-tuning with LoRA (Chinese)"
+            url: "https://www.bilibili.com/video/BV1R6P7eVEtd"
+            kind: "Video"
+          - title: "Paper: LoRA"
+            url: "https://arxiv.org/abs/2106.09685"
+            kind: "Paper"
+      - id: rag
+        year: "2020 — 2023"
+        name: "Retrieval-augmented generation (RAG)"
+        oneliner: "First find the relevant content in an external knowledge base, then have the model answer based on it."
+        why: "A model only knows what it saw in training, has a cutoff date, and has never seen your company's documents. Retraining is slow and expensive, and putting every document in the prompt is far too long. So you retrieve only the few passages relevant to the question and put those in the prompt. That is RAG, and it is the most common shape of enterprise AI apps."
+        branches:
+          - name: "Embeddings and vector databases"
+            note: "Turn text into lists of numbers where similar meanings get similar numbers, so you can search by meaning."
+          - name: "Chunking, hybrid search, reranking"
+            note: "All answers to the same problem: the retrieval step found the wrong content."
+          - name: "RAG plus knowledge graphs"
+            note: "Store key facts as entity-relation-entity triples for more accurate fact lookup, for cases where mistakes are not acceptable."
+        resources:
+          - title: "Paper: Retrieval-Augmented Generation"
+            url: "https://arxiv.org/abs/2005.11401"
+            kind: "Paper"
+
+  - name: "Letting the model act"
+    span: "2022 — 2025"
+    summary: "From only talking to using tools and finishing tasks on its own"
+    nodes:
+      - id: function-calling
+        year: "2023"
+        name: "Function calling"
+        oneliner: "The model outputs, in an agreed format, which tool to call and with what arguments, and an outside system actually runs it."
+        why: "A model only outputs text: it cannot check today's weather or place an order. If it states in a fixed format \"call get_weather, city is Shanghai\", a program can run that and hand back the result. The model goes from only talking to using tools."
+        branches:
+          - name: "Tools"
+            note: "The individual capabilities a developer gives the model, each with a name, description and parameters."
+        resources:
+          - title: "OpenAI function calling docs"
+            url: "https://platform.openai.com/docs/guides/function-calling"
+            kind: "Docs"
+      - id: mcp
+        year: "2024"
+        name: "MCP (Model Context Protocol)"
+        oneliner: "A standard interface that lets AI apps connect to tools, data and services in one consistent way."
+        why: "With function calling, every AI app had to build its own connection to every tool, so the same tool was rewritten many times. MCP defines one way to connect, like a USB port for AI: write a tool once and every MCP-compatible app can use it."
+        branches:
+          - name: "MCP vs tools vs skills"
+            note: "Think of cooking tomato and egg stir-fry. MCP is the kitchen door, tools are the pans and stove inside, and a skill is the recipe that takes you from the door to the finished dish."
+        resources:
+          - title: "Bilibili: AI terms in plain words (MCP, tools, skills and more; Chinese)"
+            url: "https://www.bilibili.com/video/BV1ojfDBSEPv"
+            kind: "Video"
+          - title: "MCP official introduction"
+            url: "https://modelcontextprotocol.io/introduction"
+            kind: "Docs"
+      - id: agent
+        year: "2022 — 2025"
+        name: "Agents"
+        oneliner: "A system that works toward a goal by repeating think, act, observe, and calls tools on its own to finish complex tasks."
+        why: "Function calling does one step at a time, so a person has to direct every step of a complex task. If the model decides the next step itself, checks the result and decides again, it can finish a whole job on its own. Prompt plus model plus tools is the simplest agent."
+        branches:
+          - name: "The agent loop (ReAct)"
+            note: "Think, act, observe, and repeat until the task is done."
+          - name: "Workflow vs agent"
+            note: "Use a fixed workflow when the steps are known: more stable and cheaper. Let an agent decide only when the steps are uncertain."
+          - name: "Agent design patterns"
+            note: "Common building blocks such as routing, parallel work, planning and reflection, which can be combined."
+        resources:
+          - title: "How agents work (tw93, long article, Chinese)"
+            url: "https://tw93.fun/2026-03-21/agent.html"
+            kind: "Article"
+          - title: "Paper: ReAct"
+            url: "https://arxiv.org/abs/2210.03629"
+            kind: "Paper"
+      - id: multi-agent
+        year: "2025"
+        name: "Multi-agent systems"
+        oneliner: "Several specialised agents work together on a task, each with its own clean context."
+        why: "The more one agent does, the messier its context gets and the worse it performs. Splitting the task across specialised agents fixes that, but coordination has its own cost. So it is worth it only in a few cases: polluted context, work that can run in parallel, or a real need for specialisation."
+        branches:
+          - name: "When not to use it"
+            note: "Most of the time a single agent with good tools is enough. Multi-agent setups cost far more tokens and complexity."
+        resources:
+          - title: "Anthropic: when to use multi-agent systems"
+            url: "https://claude.com/blog/building-multi-agent-systems-when-and-how-to-use-them"
+            kind: "Article"
+
+  - name: "Making agents reliable"
+    span: "2025 — 2026"
+    summary: "Agents can act. How to keep them steady over long, real work"
+    nodes:
+      - id: context
+        year: "2025"
+        name: "Context engineering"
+        oneliner: "Deciding what the model sees at each step: history, knowledge and tool results, and how to filter, compress and arrange them."
+        why: "The longer an agent runs, the longer its context gets. History, retrieved text and tool output pile up and the model loses track of what matters. Prompt engineering is about how to phrase one request; context engineering is about which information to show at every step."
+        branches:
+          - name: "Compression and memory"
+            note: "Summarise long history into key points, or store it outside and fetch it when needed."
+          - name: "Loading on demand"
+            note: "Do not fill the context up front; add each piece when it is needed."
+        resources:
+          - title: "Anthropic: Effective context engineering for AI agents"
+            url: "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents"
+            kind: "Article"
+          - title: "LangChain: Context engineering"
+            url: "https://blog.langchain.com/context-engineering-for-agents/"
+            kind: "Article"
+      - id: skill
+        year: "2025"
+        name: "Agent skills"
+        oneliner: "A way of doing a job (prompts, scripts, reference files) packaged as a reusable module the agent loads when needed."
+        why: "Explaining the same procedure in the prompt every time is long and hard to reuse. Write it as a skill instead, and the agent reads the details only when it uses it (progressive disclosure). That saves context and makes the method shareable. It is especially good for capturing standard procedures."
+        branches:
+          - name: "Progressive disclosure"
+            note: "The agent first sees only the skill's short description and reads the full contents only when it uses it."
+          - name: "Skill vs sub-agent"
+            note: "A skill is roughly a sub-agent that switches on when needed."
+        resources:
+          - title: "Anthropic: introducing agent skills"
+            url: "https://claude.com/blog/equipping-agents-for-the-real-world-with-agent-skills"
+            kind: "Article"
+          - title: "Agent Skills open standard"
+            url: "https://agentskills.io/home"
+            kind: "Docs"
+      - id: personal-agent
+        year: "2026"
+        name: "Personal agents and bots"
+        oneliner: "A private AI assistant that lives in your chat app, phone or computer and handles things for you over time."
+        why: "Once agents became capable, the next step was bringing them closer to people: no special website, just your chat app or phone. March to April 2026 was the peak of the open-source framework OpenClaw; the second half of the year brought a wave of personal bot launches from large companies. This node changes fast, so check what is current when you get here."
+        branches:
+          - name: "OpenClaw"
+            note: "The most popular open-source personal agent framework of early 2026. One key idea was putting the agent inside chat apps."
+        resources:
+          - title: "nanobot: a compact re-implementation of OpenClaw (good for reading the code)"
+            url: "https://github.com/HKUDS/nanobot"
+            kind: "Code"
+      - id: harness
+        year: "2026"
+        name: "Harness engineering"
+        oneliner: "Building constraints, feedback and reliable context around an agent so it finishes long tasks dependably in a controlled environment."
+        why: "An agent that does well once may not hold up over hours or days: it forgets, drifts and grades itself too kindly. A harness is the gear for steering it: instruction management, orchestration, guardrails, evaluation and integration. However strong models get, this layer is still worth building."
+        branches:
+          - name: "Evals"
+            note: "A fixed set of test cases that measures how well the AI does. It is where all improvement starts (you build one in Module 4)."
+          - name: "Guardrails and human in the loop"
+            note: "Limit what the agent can do and put people at the decisions that matter most."
+        resources:
+          - title: "Anthropic: harness design for long-running apps"
+            url: "https://www.anthropic.com/engineering/harness-design-long-running-apps"
+            kind: "Article"
+          - title: "Anthropic: effective harnesses for long-running agents"
+            url: "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents"
+            kind: "Article"
+          - title: "OpenAI: Harness engineering"
+            url: "https://openai.com/index/harness-engineering/"
+            kind: "Article"
+
+optional:
+  title: "Good to know"
+  note: "Research-heavy or domain-specific topics, optional for most AI product roles. Recognising the names and roughly what they do is enough."
+  items:
+    - name: "Multimodal models"
+      note: "Models that understand and generate text, images, audio and video together."
+    - name: "Diffusion models (DiT)"
+      note: "Generate an image by wiping away noise step by step. The main method for image and video generation today."
+    - name: "GANs"
+      note: "One network forges, another detects, and both improve. Fast but unstable; largely replaced by diffusion."
+    - name: "Liquid neural networks (LNN)"
+      note: "An architecture different from the Transformer, suited to continuously changing signals; seen in robotics and self-driving."
+    - name: "Benchmarks"
+      note: "Standard exams for comparing models. Useful when choosing a model, but no substitute for evaluating your own use case."

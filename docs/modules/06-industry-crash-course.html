@@ -22,7 +22,7 @@
 <aside class="sidebar">
   <a class="back" href="../index.html">Home</a>
   <p class="side-title">Modules</p>
-  <ol><li><a href="00-start-here.html"><span>00</span><em>Start Here</em></a></li><li><a href="01-ai-as-your-tutor.html"><span>01</span><em>AI as Your Tutor</em></a></li><li><a href="02-build-your-map.html"><span>02</span><em>Build Your Map</em></a></li><li><a href="03-ship-in-week-one.html"><span>03</span><em>Ship in Week One</em></a></li><li><a href="04-learn-the-methods.html"><span>04</span><em>Learn the Methods Through Your Project</em></a></li><li><a href="05-chase-a-trend.html"><span>05</span><em>Chase a Trend Without Drowning</em></a></li><li class="active"><a href="06-industry-crash-course.html"><span>06</span><em>Industry Crash Course</em></a></li><li><a href="07-record-and-distill.html"><span>07</span><em>Record and Distill</em></a></li><li><a href="08-into-the-job-hunt.html"><span>08</span><em>Into the Job Hunt</em></a></li></ol>
+  <ol><li><a href="00-start-here.html"><span>00</span><em>Start Here</em></a></li><li><a href="01-ai-as-your-tutor.html"><span>01</span><em>The AI Knowledge Map</em></a></li><li><a href="02-build-your-map.html"><span>02</span><em>Build Your Map</em></a></li><li><a href="03-ship-in-week-one.html"><span>03</span><em>Ship in Week One</em></a></li><li><a href="04-learn-the-methods.html"><span>04</span><em>Learn the Methods Through Your Project</em></a></li><li><a href="05-chase-a-trend.html"><span>05</span><em>Chase a Trend Without Drowning</em></a></li><li class="active"><a href="06-industry-crash-course.html"><span>06</span><em>Industry Crash Course</em></a></li><li><a href="07-record-and-distill.html"><span>07</span><em>Record and Distill</em></a></li><li><a href="08-into-the-job-hunt.html"><span>08</span><em>Into the Job Hunt</em></a></li></ol>
 </aside>
 <article class="lesson">
   <p class="eyebrow">Module 06</p>
@@ -71,6 +71,43 @@
   <p>By Lucy Li, AI product manager. <a href="https://github.com/lucyli-lpl">@lucyli-lpl</a> · <a href="https://github.com/lucyli-lpl/zero2aipm">github.com/lucyli-lpl/zero2aipm</a></p>
 </footer>
 <script>
+document.querySelectorAll('.quiz').forEach(function (qz) {
+  var right = 0, done = 0, total = +qz.dataset.total;
+  qz.querySelectorAll('.q').forEach(function (q) {
+    q.querySelectorAll('.opt').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (q.classList.contains('answered')) return;
+        q.classList.add('answered');
+        var ok = b.dataset.ok === '1';
+        b.classList.add(ok ? 'right' : 'wrong');
+        q.querySelectorAll('.opt').forEach(function (o) { if (o.dataset.ok === '1') o.classList.add('right'); o.disabled = true; });
+        var ex = q.querySelector('.explain'), v = ex.querySelector('.verdict');
+        v.textContent = ok ? v.dataset.right : v.dataset.wrong;
+        ex.classList.add(ok ? 'is-right' : 'is-wrong');
+        ex.hidden = false;
+        done++; if (ok) right++;
+        if (done === total) {
+          var sc = qz.querySelector('.quiz-score');
+          sc.textContent = qz.dataset.score.replace('{right}', right).replace('{total}', total);
+          sc.hidden = false;
+        }
+      });
+    });
+  });
+});
+document.querySelectorAll('.kmap').forEach(function (km) {
+  km.querySelectorAll('.kmap-tools button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      km.querySelectorAll('details.node').forEach(function (d) { d.open = b.dataset.act === 'open'; });
+    });
+  });
+  km.querySelectorAll('.ov-node').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var d = document.querySelector(a.getAttribute('href'));
+      if (d) d.open = true;
+    });
+  });
+});
 document.querySelectorAll('.lang-switch').forEach(function (a) {
   a.addEventListener('click', function () {
     try { localStorage.setItem('z2a-lang', a.dataset.lang); } catch (e) {}

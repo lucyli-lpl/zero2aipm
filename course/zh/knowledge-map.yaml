@@ -1,0 +1,255 @@
+# AI 应用知识全景图（中文）
+# 网站上渲染成可交互的路线图；在 Agent 里学习时，导师直接读这个文件。
+# 时间和例子截至 2026 年 11 月。新名词出现时，往对应阶段加节点或分支。
+
+title: "AI 应用知识全景图"
+intro: "12 个主干节点，按出现的先后顺序排列。每一个都是为了解决上一个留下的问题。先顺着主干走一遍，再按需展开分支。"
+labels:
+  why: "为什么会出现"
+  branches: "分支"
+  resources: "推荐资料"
+  optional: "了解即可"
+  expand_all: "全部展开"
+  collapse_all: "全部收起"
+
+stages:
+  - name: "模型本身"
+    span: "2017 — 2022"
+    summary: "大模型是什么，以及怎么和它说话"
+    nodes:
+      - id: llm
+        year: "2017"
+        name: "大语言模型（LLM）与 Transformer"
+        oneliner: "读过海量文字、靠预测下一个词来生成内容的模型。Transformer 是它的底层架构。"
+        why: "之前的语言模型只能一个词一个词地顺序处理，读到后面就忘了前面，也没法并行训练。2017 年的论文《Attention Is All You Need》提出用「注意力」让每个词直接看到全文所有词，既记得住长文，又能并行训练。模型因此可以越做越大，大模型时代从这里开始。"
+        branches:
+          - name: "预训练"
+            note: "用全网海量文本训练，让模型有知识。像从出生读到大学毕业：博学，但还不会听话。"
+          - name: "后训练（SFT、RLHF、DPO）"
+            note: "预训练之后的所有训练。SFT 教它按指令回答，RLHF 和 DPO 让它更安全、更好用。像上岗培训。"
+          - name: "Token 与上下文窗口"
+            note: "模型按 token 读写和计费；上下文窗口是它一次能看到的内容上限。"
+          - name: "Scaling Law"
+            note: "训练时投入越多算力、参数、数据，模型越强；2024 年后发现推理时让模型多想一会儿，效果也会变好。"
+          - name: "推理模型"
+            note: "回答前先在内部「思考」的模型，用更多推理时间换更好的答案。"
+          - name: "幻觉"
+            note: "模型一本正经地编造内容。后面很多技术都在解决它。"
+        resources:
+          - title: "B 站 @唐吉坷德拉曼查的英豪：《Attention Is All You Need》讲解（强烈推荐，他的所有视频都值得看）"
+            url: "https://search.bilibili.com/upuser?keyword=%E5%94%90%E5%90%89%E5%9D%B7%E5%BE%B7%E6%8B%89%E6%9B%BC%E6%9F%A5%E7%9A%84%E8%8B%B1%E8%B1%AA"
+            kind: "视频"
+          - title: "跟李沐学 AI：Transformer 论文逐段精读（想更深入时看）"
+            url: "https://www.bilibili.com/video/BV1pu411o7BE"
+            kind: "视频"
+          - title: "论文原文：Attention Is All You Need"
+            url: "https://arxiv.org/abs/1706.03762"
+            kind: "论文"
+      - id: prompt
+        year: "2020 — 2022"
+        name: "提示词工程（Prompt Engineering）"
+        oneliner: "通过设计输入的指令，让模型更准确、更可控地给出你要的结果。不改模型本身，成本最低。"
+        why: "模型变大以后，人们发现同一个模型，换一种问法，答案质量差别巨大。重新训练太贵，于是先在「怎么问」上下功夫：给角色、给例子、让它一步步想。"
+        branches:
+          - name: "系统提示词与用户提示词"
+            note: "系统提示词定规矩和人设，用户提示词是每次的具体问题。"
+          - name: "少样本（Few-shot）"
+            note: "在提示词里给几个示例，让模型照着格式和风格来。"
+          - name: "思维链（CoT）"
+            note: "让模型先写出推理过程再给答案，复杂问题的准确率会明显提高。"
+        resources:
+          - title: "Claude 提示词最佳实践（官方文档）"
+            url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices"
+            kind: "文档"
+          - title: "提示词工程学习笔记（中文长文）"
+            url: "https://www.aneasystone.com/archives/2024/01/prompt-engineering-notes.html"
+            kind: "文章"
+
+  - name: "让模型懂你的数据"
+    span: "2020 — 2023"
+    summary: "通用模型不知道你公司的事，怎么补上"
+    nodes:
+      - id: finetune
+        year: "2021"
+        name: "微调（Fine-tuning）"
+        oneliner: "在已有模型上，用特定数据再训练一轮，让它更适合某个任务。改的是模型参数。"
+        why: "提示词能改的有限，有些格式、风格、专业口吻怎么提示都不稳定。从头训练又太贵，于是在现成模型上「再培训」一下。LoRA 只训练很少一部分参数，把成本降到个人和小团队也做得起。"
+        branches:
+          - name: "SFT 与 LoRA"
+            note: "SFT 用「指令→回答」数据训练；LoRA 只训练少量低秩参数，现在绝大多数垂直场景都用它。"
+          - name: "微调 vs 增量预训练"
+            note: "微调教模型「怎么回答」，增量预训练教模型「新知识」。只想要格式和口吻，用微调；要懂新领域，用增量预训练或 RAG。"
+          - name: "量化、蒸馏、剪枝"
+            note: "让模型更小更快。企业落地最常用的是量化（立刻省成本）和蒸馏（做一个专属小模型）。"
+        resources:
+          - title: "B 站：用 LoRA 做 SFT 微调"
+            url: "https://www.bilibili.com/video/BV1R6P7eVEtd"
+            kind: "视频"
+          - title: "论文：LoRA"
+            url: "https://arxiv.org/abs/2106.09685"
+            kind: "论文"
+      - id: rag
+        year: "2020 — 2023"
+        name: "检索增强生成（RAG）"
+        oneliner: "先从外部知识库里找到相关内容，再让模型基于这些内容回答。"
+        why: "模型只知道训练时见过的东西，而且有截止日期，也不认识你公司的文档。重新训练太慢太贵，把文档全塞进提示词又超长。于是只检索出和问题相关的几段，放进提示词。这就是 RAG，也是企业 AI 应用最常见的形态。"
+        branches:
+          - name: "向量化与向量数据库"
+            note: "把文字变成一串数字，意思相近的文字数字也相近，于是能按「意思」找内容。"
+          - name: "切块、混合检索、重排序"
+            note: "都在解决同一个问题：检索这一步找错了内容。"
+          - name: "RAG + 知识图谱"
+            note: "把关键事实存成「实体-关系-实体」，查事实更准，适合不能出错的场景。"
+        resources:
+          - title: "论文：Retrieval-Augmented Generation"
+            url: "https://arxiv.org/abs/2005.11401"
+            kind: "论文"
+
+  - name: "让模型能做事"
+    span: "2022 — 2025"
+    summary: "从只会说话，到会调用工具、自己完成任务"
+    nodes:
+      - id: function-calling
+        year: "2023"
+        name: "函数调用（Function Calling）"
+        oneliner: "让模型按约定格式输出「调用某个工具、参数是什么」，由外部系统真正去执行。"
+        why: "模型只会输出文字，查不了实时天气，也下不了单。如果让它按固定格式说出「我要调用查天气，城市是上海」，程序就能照着去执行，再把结果交回给它。模型从「只会说话」变成「会用工具」。"
+        branches:
+          - name: "工具（Tools）"
+            note: "开发者提供给模型的一个个能力，每个都有名称、说明和参数。"
+        resources:
+          - title: "OpenAI 函数调用文档"
+            url: "https://platform.openai.com/docs/guides/function-calling"
+            kind: "文档"
+      - id: mcp
+        year: "2024"
+        name: "MCP（模型上下文协议）"
+        oneliner: "一种统一的接口标准，让 AI 应用用同一种方式连接各种工具、数据和服务。"
+        why: "有了函数调用之后，每个 AI 应用接每个工具都要单独开发一遍，同一个工具在不同应用里要重写很多次。MCP 规定了统一的连接方式，像 AI 世界的 USB 接口：工具写一次，所有支持 MCP 的应用都能用。"
+        branches:
+          - name: "MCP、Tools、Skills 的区别"
+            note: "做西红柿炒蛋：MCP 是进厨房的门，Tools 是厨房里的锅铲炉灶，Skill 是那份菜谱，告诉你从进门到出锅怎么做。"
+        resources:
+          - title: "B 站：AI 名词大白话（MCP、Tools、Skills 等）"
+            url: "https://www.bilibili.com/video/BV1ojfDBSEPv"
+            kind: "视频"
+          - title: "MCP 官方介绍"
+            url: "https://modelcontextprotocol.io/introduction"
+            kind: "文档"
+      - id: agent
+        year: "2022 — 2025"
+        name: "智能体（Agent）"
+        oneliner: "能围绕一个目标，反复「思考 → 行动 → 观察」，自己调用工具完成复杂任务的系统。"
+        why: "函数调用一次只做一步，复杂任务需要人一步步指挥。如果让模型自己决定下一步做什么、做完看结果、再决定下一步，它就能独立完成一整件事。「提示词 + 大模型 + 工具」就是最简单的 Agent。"
+        branches:
+          - name: "Agent 循环（ReAct）"
+            note: "思考 → 行动 → 观察，循环到任务完成。"
+          - name: "工作流 vs Agent"
+            note: "步骤固定的用工作流，更稳定更便宜；步骤不确定的才交给 Agent 自己决定。"
+          - name: "Agent 设计模式"
+            note: "路由、并行、规划、反思等常见套路，可以组合使用。"
+        resources:
+          - title: "Agent 是怎么工作的（tw93，中文长文）"
+            url: "https://tw93.fun/2026-03-21/agent.html"
+            kind: "文章"
+          - title: "论文：ReAct"
+            url: "https://arxiv.org/abs/2210.03629"
+            kind: "论文"
+      - id: multi-agent
+        year: "2025"
+        name: "多智能体（Multi-Agent）"
+        oneliner: "多个分工明确的 Agent 协作完成任务，各自用干净的上下文。"
+        why: "一个 Agent 干的事越多，上下文越乱，表现越差。把任务拆给几个专职 Agent 可以解决这个问题，但协作本身也有成本。所以只在少数情况下值得用：上下文被污染、任务能并行、需要专门分工。"
+        branches:
+          - name: "什么时候不该用"
+            note: "大部分情况下，单 Agent 加好工具就够了。多 Agent 的 token 消耗和复杂度都高得多。"
+        resources:
+          - title: "Anthropic：什么时候该用多智能体"
+            url: "https://claude.com/blog/building-multi-agent-systems-when-and-how-to-use-them"
+            kind: "文章"
+
+  - name: "让 Agent 靠谱地干活"
+    span: "2025 — 2026"
+    summary: "Agent 能做事了，怎么让它在真实环境里长期稳定"
+    nodes:
+      - id: context
+        year: "2025"
+        name: "上下文工程（Context Engineering）"
+        oneliner: "决定在每一步给模型看什么：对话历史、知识、工具结果，怎么筛选、压缩和组织。"
+        why: "Agent 跑得越久，上下文越长：历史、检索结果、工具输出混在一起，模型开始抓不住重点。提示词工程管的是「一句话怎么说」，上下文工程管的是「每一步给它看哪些信息」。"
+        branches:
+          - name: "压缩与记忆"
+            note: "把长历史总结成要点，或者存到外部，需要时再取。"
+          - name: "按需加载"
+            note: "不一次塞满，用到哪部分再给哪部分。"
+        resources:
+          - title: "Anthropic：Effective context engineering for AI agents"
+            url: "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents"
+            kind: "文章"
+          - title: "LangChain：Context Engineering"
+            url: "https://blog.langchain.com/context-engineering-for-agents/"
+            kind: "文章"
+      - id: skill
+        year: "2025"
+        name: "Agent Skill（技能）"
+        oneliner: "把一套做事方法（提示词、脚本、参考文件）打包成可复用的模块，Agent 需要时再加载。"
+        why: "同一套流程每次都要在提示词里重新讲一遍，又长又难复用。把它写成一个技能包，Agent 用到时才读取详细内容（渐进式披露），既省上下文，又能分享给别人。特别适合沉淀 SOP。"
+        branches:
+          - name: "渐进式披露"
+            note: "Agent 先只看技能的简介，真要用时才读完整内容。"
+          - name: "Skill vs 子 Agent"
+            note: "Skill 约等于一个按需激活的子 Agent。"
+        resources:
+          - title: "Anthropic：Agent Skills 介绍"
+            url: "https://claude.com/blog/equipping-agents-for-the-real-world-with-agent-skills"
+            kind: "文章"
+          - title: "Agent Skills 开放标准"
+            url: "https://agentskills.io/home"
+            kind: "文档"
+      - id: personal-agent
+        year: "2026"
+        name: "个人 Agent 与 Bot"
+        oneliner: "常驻在你的聊天工具、手机或电脑里，替你长期处理事务的私人 AI 助手。"
+        why: "Agent 能力成熟后，下一步是让它离用户更近：不用打开专门的网页，直接在飞书、微信、手机里找它。2026 年 3 到 4 月是开源框架 OpenClaw 的热潮，下半年进入各大厂的个人 Bot 集中发布期。这是一个时效性很强的节点，学到这里时先查查现在的情况。"
+        branches:
+          - name: "OpenClaw"
+            note: "2026 年上半年最火的开源个人 Agent 框架，一大创新是把 Agent 的入口扩展到了聊天工具里。"
+        resources:
+          - title: "nanobot：OpenClaw 的精简版实现（适合读代码学原理）"
+            url: "https://github.com/HKUDS/nanobot"
+            kind: "代码"
+      - id: harness
+        year: "2026"
+        name: "Harness 工程"
+        oneliner: "围绕 Agent 搭建约束、反馈和可靠上下文，让它在受控环境里稳定完成长周期任务。"
+        why: "Agent 单次能做好，不代表连续跑几个小时、几天还能做好：会忘、会跑偏、会自我感觉良好。Harness 是「驾驭 Agent 的装置」：指令管理、流程编排、护栏、评估、集成。模型再强，这一层依然值得做。"
+        branches:
+          - name: "评测（Evals）"
+            note: "用一组固定的测试案例衡量 AI 做得好不好，是所有优化的起点（模块 4 会动手做）。"
+          - name: "护栏与人在环"
+            note: "限制 Agent 能做什么，把人放在最关键的决策点上。"
+        resources:
+          - title: "Anthropic：长时间运行应用的 harness 设计"
+            url: "https://www.anthropic.com/engineering/harness-design-long-running-apps"
+            kind: "文章"
+          - title: "Anthropic：长期运行 Agent 的有效 harness"
+            url: "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents"
+            kind: "文章"
+          - title: "OpenAI：Harness engineering"
+            url: "https://openai.com/zh-Hans-CN/index/harness-engineering/"
+            kind: "文章"
+
+optional:
+  title: "了解即可"
+  note: "偏研究或偏特定领域，对大多数 AI 产品岗是选修。认得名字、知道大概做什么就够了。"
+  items:
+    - name: "多模态"
+      note: "能同时理解和生成文字、图片、语音、视频的模型。"
+    - name: "扩散模型（DiT）"
+      note: "从一团噪点一步步「擦」出图像，是现在主流的图片和视频生成方法。"
+    - name: "GAN（生成对抗网络）"
+      note: "一个负责造假、一个负责打假，互相对抗变强。快但不稳，现在多被扩散模型取代。"
+    - name: "液态神经网络（LNN）"
+      note: "一种区别于 Transformer 的架构，适合连续变化的信号，多见于机器人和自动驾驶。"
+    - name: "基准测试"
+      note: "比较模型能力的标准考卷。选模型时参考，但不能替代你自己场景的评测。"

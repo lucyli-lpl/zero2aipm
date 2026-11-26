@@ -1,61 +1,100 @@
 ---
 id: "01"
-title: "AI as Your Tutor"
-summary: "Learn any new concept by rebuilding the problem it solves, then let the AI test you."
-time: "1 hour"
-output: "Three concepts learned the reconstruct way, each with a self-test"
+title: "The AI Knowledge Map"
+summary: "Watch three starter videos, then walk a 12-node route through the core terms of AI applications."
+time: "3 to 5 hours, over a few days"
+output: "Starter videos watched, the map walked once, and the first entries in your glossary"
 ---
 
-# Module 1 · AI as Your Tutor
+# Module 1 · The AI Knowledge Map
 
 ## Why this module
 
-You will meet a new AI term almost every day: RAG, MCP, harness, context engineering, whatever arrives next month. Memorizing definitions does not hold up. A definition tells you what something is called. It does not tell you why it exists, so the next variant with a new name looks like a new thing to learn from scratch.
+The hardest part of starting from zero is not that any one idea is difficult. It is not knowing which ideas exist, which to learn first, and how they relate. This module gives you two things directly: the videos I recommend most from my own learning, and a route that strings the core terms of AI applications together in the order they appeared. You do not need to come up with the terms yourself. Just follow along.
 
-The fastest learning partner you have is the AI itself. Most people use it as a search engine that answers questions. Used well, it is a tutor that explains, checks your understanding and points out where you are wrong.
+## Step 1: Watch these first
 
-## The method: reconstruct, then get tested
+Watch them in order. The first two are essential. Most are in Chinese; if you need English, ask your tutor for an equivalent and check that it is recent.
 
-**Step 1. Go back to the world before the concept existed.** Ask: what were people trying to do, what went wrong, and what constraints made the obvious fixes fail? Then derive the concept as if it had not been invented yet.
+| Video | What you get |
+|---|---|
+| [Andrew Ng, "AI for Everyone"](https://www.bilibili.com/video/BV1yC4y127uj) | What AI can and cannot do; the big picture |
+| [Bilibili @唐吉坷德拉曼查的英豪](https://search.bilibili.com/upuser?keyword=%E5%94%90%E5%90%89%E5%9D%B7%E5%BE%B7%E6%8B%89%E6%9B%BC%E6%9F%A5%E7%9A%84%E8%8B%B1%E8%B1%AA), starting with his explainer on "Attention Is All You Need" | How large models came about. All his videos are worth watching |
+| [AI terms in plain words](https://www.bilibili.com/video/BV1ojfDBSEPv) | A first look at MCP, tools, skills and other common terms |
+| [Mu Li: close reading of the Transformer paper](https://www.bilibili.com/video/BV1pu411o7BE) (optional) | For going one level deeper |
 
-Example with RAG:
+No need to take notes or understand everything. The goal is to have heard these terms, so the map in the next step feels familiar.
 
-- Before: a language model only knows what was in its training data, which stops at some date and never includes your company's documents.
-- Obvious fix 1: retrain the model on your documents. Too slow and too expensive to repeat every time a document changes.
-- Obvious fix 2: paste every document into the prompt. The prompt has a size limit, and long prompts get slow, costly and less accurate.
-- So you need a way to find only the few passages relevant to this question, and put just those into the prompt. That is retrieval-augmented generation.
+## Step 2: Walk the map
 
-Once you have rebuilt it this way, follow-up ideas stop being new vocabulary. "Hybrid retrieval", "reranking" and "chunking strategy" are all answers to "the retrieval step finds the wrong passages", a problem you already understand.
+<!-- knowledge-map -->
 
-**Step 2. Ask the AI to explain it this way.** A prompt that works:
+The map has 12 core nodes in four stages, in the order they appeared. Each node exists to solve a problem the previous one left open:
 
-> Teach me [concept] the reconstruct way. Start from the world before it existed. What problem were people facing, what did they try first, and why did that fail? Then derive [concept] step by step. Use one concrete example. Keep it under 400 words.
+| Stage | Nodes | What this stage solves |
+|---|---|---|
+| The model itself (2017–2022) | LLMs and the Transformer, prompt engineering | What a large model is and how to talk to it |
+| Teaching the model your data (2020–2023) | Fine-tuning, RAG | A general model knows nothing about your company |
+| Letting the model act (2022–2025) | Function calling, MCP, agents, multi-agent systems | From only talking to using tools and finishing tasks |
+| Making agents reliable (2025–2026) | Context engineering, agent skills, personal agents, harness engineering | Keeping agents steady over long, real work |
 
-**Step 3. Have it test you.** Right after, ask for a short quiz: two multiple-choice questions, one short-answer question, and one question that applies the concept to a product you know. Answer without looking back. The questions you miss are the ones to revisit.
+Each node has four parts: a one-line explanation, why it appeared, branch terms, and recommended resources. On the website you can open each node. In an agent, the full content is in [`knowledge-map.yaml`](knowledge-map.yaml) and your tutor walks you through it stage by stage.
 
-**Step 4. Put it in your own words.** Add one line to your glossary in plain language, as you would explain it to a friend. If you cannot, you have not finished.
+**How to walk it:** at first, read only each node's one-liner and "why it appeared", and string the 12 nodes together from start to finish. Come back for the branches and resources when a project needs them. At the end there is a "good to know" shelf of research-heavy topics; recognising the names is enough.
 
-## Habits that make the AI a better tutor
+## Step 3: When you get stuck, ask from the problem
 
-- **Tell it who you are.** "I am a product manager with no engineering background" changes the explanation a lot.
-- **Ask for one example, not five.** One worked example teaches more than a list.
-- **Push back.** If an explanation feels too smooth, ask "what is the strongest argument that this approach is wrong?" or "where does this break in practice?"
-- **Ask what changed recently.** Models do not know everything that happened after their training. For anything current, ask the AI to search, or check a recent source yourself.
+The "why it appeared" part of each node uses this course's core learning method: do not memorise the definition. Go back to the world before the idea existed, see what problem people had and why the obvious fixes failed, then derive the idea.
+
+When a node or branch does not make sense, tell your tutor:
+
+> Teach me [term] by reconstructing it. Start from the world before it existed: what problem did people have, what did they try first, and why did that fail? Then derive [term]. Use one concrete example, under 300 words.
+
+Tutors in this course explain this way by default. When you meet a new term that is not on the map, ask the same way, then hang it on the right stage.
 
 ## Exercise
 
-1. Pick three terms you have seen but could not explain. If you have none, use: context window, function calling, evals.
-2. For each one, ask your tutor to teach it the reconstruct way (your tutor in this course does this by default).
-3. Take the quiz your tutor gives you after each one. Write your answers before asking for the correct ones.
-4. Add each term to `my-journey/glossary.md` in one or two plain sentences, with the date.
-5. Log the session in your learning log.
+1. Watch the first three videos from Step 1 and add an entry to your learning log.
+2. Tell your tutor "walk me through the map". It explains one stage at a time and reconstructs each node. You only need to say "got it" or "explain that one again".
+3. When you are done, add the five nodes you think matter most to `my-journey/glossary.md`. Your tutor can draft them first; rewrite them in your own plain words.
 
-## Check yourself
+## Quick quiz
 
-- For one of your three terms, can you name the problem it solves without using the term itself?
-- Which quiz question did you miss, and why?
-- What would make one of your three concepts obsolete? (If you can answer this, you understand it.)
+```quiz
+- q: "A company wants an AI assistant that answers staff questions about the expense policy. The policy changes every month. What is the best approach?"
+  options:
+    - "Fine-tune a model on the company policy"
+    - "RAG: put the policy documents in a knowledge base and retrieve before answering"
+    - "Write every rule into one very long prompt"
+    - "Build a multi-agent system"
+  answer: 1
+  explain: "Knowledge that changes often and must be quoted accurately is exactly what RAG is for. Fine-tuning teaches how to answer, not frequently updated facts, and a giant prompt is too long and too expensive."
+- q: "What problem does MCP mainly solve?"
+  options:
+    - "Making the model itself smarter"
+    - "Giving AI apps one standard way to connect to tools, so a tool written once works everywhere"
+    - "Reducing hallucination"
+    - "Lowering training costs"
+  answer: 1
+  explain: "With function calling, every app had to build its own connection to every tool. MCP is like a USB port for AI: one standard way to connect."
+- q: "An agent drifts after running for several hours and forgets rules set at the start. Which area deals most directly with this?"
+  options:
+    - "Pre-training"
+    - "Context engineering and harness engineering"
+    - "Diffusion models"
+    - "Few-shot prompting"
+  answer: 1
+  explain: "The longer an agent runs, the messier its context. Context engineering decides what it sees at each step; harness engineering adds constraints, feedback and evaluation to keep it steady."
+- q: "You want the model to always write support replies in your company's tone and format. No new knowledge is involved. What do you try first?"
+  options:
+    - "Continued pre-training"
+    - "Improve the prompt first, and fine-tune only if results stay inconsistent"
+    - "Build a knowledge graph"
+    - "Use multiple agents"
+  answer: 1
+  explain: "Tone and format are about how to answer. Start with the cheapest lever, the prompt, and fine-tune if it is not stable. Continued pre-training is for new knowledge."
+```
 
 ## From my journey
 
-Early on I learned terms by watching plain-language explainer videos and copying definitions into a document. It helped me read reports, but I forgot most of it within weeks. The concepts that stayed were the ones I had to use in a project or rebuild from the problem. Later I made "teach me the reconstruct way" my default way of asking about anything new.
+At first I learned terms by watching plain-language explainer videos and copying definitions into a document. That helped me read industry reports, but I forgot most of it within weeks. What stayed were the ideas I actually used in a project, or rebuilt from the problem they solve. This map is what came out of later reorganising my scattered notes around one question: what problem was each technique solving?

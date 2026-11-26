@@ -53,6 +53,10 @@ UI = {
         "next": "Next",
         "do_with_claude": "Do this module with your AI tutor: open the repository in your coding agent and type <code>start the course</code> or <code>continue</code>.",
         "home": "Home",
+        "quiz_right": "Correct.",
+        "quiz_wrong": "Not quite.",
+        "quiz_score": "You got {right} of {total} right.",
+        "map_overview": "The route at a glance. Click a node to open it.",
         "terminal": (
             '<div class="you">&gt; start the course</div>'
             '<p class="claude">Welcome. Before Module 0, tell me in two or three sentences: what do you do today, and why AI product work?</p>'
@@ -95,6 +99,10 @@ UI = {
         "next": "下一个",
         "do_with_claude": "和 AI 导师一起学这个模块：在你的编程 Agent 里打开仓库，输入<code>开始课程</code>或<code>继续</code>。",
         "home": "首页",
+        "quiz_right": "答对了。",
+        "quiz_wrong": "再想想。",
+        "quiz_score": "答对 {right} / {total} 题。",
+        "map_overview": "整条路线一览，点任意节点展开。",
         "terminal": (
             '<div class="you">&gt; 开始课程</div>'
             '<p class="claude">欢迎。开始模块 0 之前，用两三句话告诉我：你现在做什么，为什么想做 AI 产品？</p>'
@@ -103,6 +111,71 @@ UI = {
         ),
     },
 }
+
+
+def esc(x):
+    return html.escape(str(x))
+
+
+def render_quiz(lang, items, qid):
+    t = UI[lang]
+    out = [f'<div class="quiz" id="quiz-{qid}" data-total="{len(items)}" data-score="{esc(t["quiz_score"])}">']
+    for n, it in enumerate(items):
+        opts = "".join(
+            f'<button type="button" class="opt" data-ok="{1 if k == it["answer"] else 0}"><span class="key">{"ABCDEFG"[k]}</span>{esc(o)}</button>'
+            for k, o in enumerate(it["options"])
+        )
+        out.append(
+            f'<div class="q"><p class="q-text"><span class="q-no">{n + 1}</span>{esc(it["q"])}</p>'
+            f'<div class="opts">{opts}</div>'
+            f'<p class="explain" hidden><strong class="verdict" data-right="{esc(t["quiz_right"])}" data-wrong="{esc(t["quiz_wrong"])}"></strong> {esc(it["explain"])}</p></div>'
+        )
+    out.append('<p class="quiz-score" hidden></p></div>')
+    return "".join(out)
+
+
+def render_map(lang):
+    f = ROOT / "course" / lang / "knowledge-map.yaml"
+    if not f.exists():
+        return ""
+    d = yaml.safe_load(f.read_text(encoding="utf-8"))
+    L = d["labels"]
+    t = UI[lang]
+    overview, stages = [], []
+    for si, st in enumerate(d["stages"]):
+        chips = "".join(f'<a class="ov-node" href="#node-{esc(n["id"])}">{esc(n["name"])}</a>' for n in st["nodes"])
+        overview.append(f'<div class="ov-stage s{si}"><p class="ov-head"><b>{esc(st["name"])}</b><span>{esc(st["span"])}</span></p><div class="ov-nodes">{chips}</div></div>')
+        nodes = []
+        for n in st["nodes"]:
+            br = "".join(f'<li><b>{esc(b["name"])}</b><span>{esc(b["note"])}</span></li>' for b in n.get("branches", []))
+            rs = "".join(
+                f'<li><span class="kind">{esc(r["kind"])}</span><a href="{esc(r["url"])}" target="_blank" rel="noopener">{esc(r["title"])}</a></li>'
+                for r in n.get("resources", [])
+            )
+            nodes.append(
+                f'<details class="node" id="node-{esc(n["id"])}"><summary><span class="yr">{esc(n["year"])}</span>'
+                f'<span class="nm">{esc(n["name"])}</span><span class="ol">{esc(n["oneliner"])}</span></summary>'
+                f'<div class="node-body"><h4>{esc(L["why"])}</h4><p>{esc(n["why"])}</p>'
+                + (f'<h4>{esc(L["branches"])}</h4><ul class="branches">{br}</ul>' if br else "")
+                + (f'<h4>{esc(L["resources"])}</h4><ul class="res">{rs}</ul>' if rs else "")
+                + "</div></details>"
+            )
+        stages.append(
+            f'<section class="stage s{si}"><header><span class="stage-no">{si + 1}</span><div><h3>{esc(st["name"])}</h3>'
+            f'<p>{esc(st["span"])} · {esc(st["summary"])}</p></div></header>{"".join(nodes)}</section>'
+        )
+    opt = d.get("optional")
+    opt_html = ""
+    if opt:
+        items = "".join(f'<li><b>{esc(i["name"])}</b><span>{esc(i["note"])}</span></li>' for i in opt["items"])
+        opt_html = f'<section class="shelf"><h3>{esc(opt["title"])}</h3><p>{esc(opt["note"])}</p><ul class="branches">{items}</ul></section>'
+    return (
+        f'<div class="kmap"><p class="kmap-title">{esc(d["title"])}</p><p class="kmap-intro">{esc(d["intro"])}</p>'
+        f'<p class="ov-label">{esc(t["map_overview"])}</p><div class="overview">{"".join(overview)}</div>'
+        f'<div class="kmap-tools"><button type="button" data-act="open">{esc(L["expand_all"])}</button>'
+        f'<button type="button" data-act="close">{esc(L["collapse_all"])}</button></div>'
+        f'{"".join(stages)}{opt_html}</div>'
+    )
 
 
 def load_modules(lang):
@@ -114,7 +187,20 @@ def load_modules(lang):
         body = m.group(2)
         # drop the first H1; the page template renders the title
         body = re.sub(r"^\s*# .*\n", "", body, count=1)
+        quizzes = []
+
+        def grab(mq):
+            quizzes.append(yaml.safe_load(mq.group(1)))
+            return f"\n\nQUIZPLACEHOLDER{len(quizzes) - 1}\n\n"
+
+        body = re.sub(r"```quiz\n(.*?)\n```", grab, body, flags=re.S)
         content = markdown.markdown(body, extensions=["tables", "fenced_code", "sane_lists"])
+        for qi, items in enumerate(quizzes):
+            content = content.replace(f"<p>QUIZPLACEHOLDER{qi}</p>", render_quiz(lang, items, f"{f.stem}-{qi}"))
+        if "<!-- knowledge-map -->" in content:
+            content = content.replace("<!-- knowledge-map -->", render_map(lang))
+        content = content.replace('href="knowledge-map.yaml"', f'href="{REPO}/blob/main/course/{lang}/knowledge-map.yaml"')
+        content = re.sub(r'<a href="(https?://[^"]+)">', r'<a href="\1" target="_blank" rel="noopener">', content)
         content = content.replace("<table>", '<div class="table-wrap"><table>').replace("</table>", "</table></div>")
         meta["html"] = content
         meta["slug"] = f.stem
@@ -150,6 +236,43 @@ def page(lang, title, body, rel, counterpart, description):
   <p>{t['footer']} <a href="https://github.com/lucyli-lpl">@lucyli-lpl</a> · <a href="{REPO}">{REPO.replace('https://', '')}</a></p>
 </footer>
 <script>
+document.querySelectorAll('.quiz').forEach(function (qz) {{
+  var right = 0, done = 0, total = +qz.dataset.total;
+  qz.querySelectorAll('.q').forEach(function (q) {{
+    q.querySelectorAll('.opt').forEach(function (b) {{
+      b.addEventListener('click', function () {{
+        if (q.classList.contains('answered')) return;
+        q.classList.add('answered');
+        var ok = b.dataset.ok === '1';
+        b.classList.add(ok ? 'right' : 'wrong');
+        q.querySelectorAll('.opt').forEach(function (o) {{ if (o.dataset.ok === '1') o.classList.add('right'); o.disabled = true; }});
+        var ex = q.querySelector('.explain'), v = ex.querySelector('.verdict');
+        v.textContent = ok ? v.dataset.right : v.dataset.wrong;
+        ex.classList.add(ok ? 'is-right' : 'is-wrong');
+        ex.hidden = false;
+        done++; if (ok) right++;
+        if (done === total) {{
+          var sc = qz.querySelector('.quiz-score');
+          sc.textContent = qz.dataset.score.replace('{{right}}', right).replace('{{total}}', total);
+          sc.hidden = false;
+        }}
+      }});
+    }});
+  }});
+}});
+document.querySelectorAll('.kmap').forEach(function (km) {{
+  km.querySelectorAll('.kmap-tools button').forEach(function (b) {{
+    b.addEventListener('click', function () {{
+      km.querySelectorAll('details.node').forEach(function (d) {{ d.open = b.dataset.act === 'open'; }});
+    }});
+  }});
+  km.querySelectorAll('.ov-node').forEach(function (a) {{
+    a.addEventListener('click', function () {{
+      var d = document.querySelector(a.getAttribute('href'));
+      if (d) d.open = true;
+    }});
+  }});
+}});
 document.querySelectorAll('.lang-switch').forEach(function (a) {{
   a.addEventListener('click', function () {{
     try {{ localStorage.setItem('z2a-lang', a.dataset.lang); }} catch (e) {{}}

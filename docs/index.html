@@ -49,13 +49,13 @@ try { if (localStorage.getItem('z2a-lang') === 'zh' && !location.hash) { locatio
   <div class="cards"><a class="card" href="modules/00-start-here.html">
   <span class="card-no">00</span>
   <h3>Start Here</h3>
-  <p>How this course works, and the one habit that carries everything else: a learning log.</p>
-  <dl><dt>You leave with</dt><dd>Your learning log, set up and with its first entry</dd><dt>Time</dt><dd>30 min</dd></dl>
+  <p>How this course works, and the one habit to set up first: a learning log.</p>
+  <dl><dt>You leave with</dt><dd>Your learning log, set up and with its first entry</dd><dt>Time</dt><dd>15 min</dd></dl>
 </a><a class="card" href="modules/01-ai-as-your-tutor.html">
   <span class="card-no">01</span>
-  <h3>AI as Your Tutor</h3>
-  <p>Learn any new concept by rebuilding the problem it solves, then let the AI test you.</p>
-  <dl><dt>You leave with</dt><dd>Three concepts learned the reconstruct way, each with a self-test</dd><dt>Time</dt><dd>1 hour</dd></dl>
+  <h3>The AI Knowledge Map</h3>
+  <p>Watch three starter videos, then walk a 12-node route through the core terms of AI applications.</p>
+  <dl><dt>You leave with</dt><dd>Starter videos watched, the map walked once, and the first entries in your glossary</dd><dt>Time</dt><dd>3 to 5 hours, over a few days</dd></dl>
 </a><a class="card" href="modules/02-build-your-map.html">
   <span class="card-no">02</span>
   <h3>Build Your Map</h3>
@@ -107,6 +107,43 @@ try { if (localStorage.getItem('z2a-lang') === 'zh' && !location.hash) { locatio
   <p>By Lucy Li, AI product manager. <a href="https://github.com/lucyli-lpl">@lucyli-lpl</a> · <a href="https://github.com/lucyli-lpl/zero2aipm">github.com/lucyli-lpl/zero2aipm</a></p>
 </footer>
 <script>
+document.querySelectorAll('.quiz').forEach(function (qz) {
+  var right = 0, done = 0, total = +qz.dataset.total;
+  qz.querySelectorAll('.q').forEach(function (q) {
+    q.querySelectorAll('.opt').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (q.classList.contains('answered')) return;
+        q.classList.add('answered');
+        var ok = b.dataset.ok === '1';
+        b.classList.add(ok ? 'right' : 'wrong');
+        q.querySelectorAll('.opt').forEach(function (o) { if (o.dataset.ok === '1') o.classList.add('right'); o.disabled = true; });
+        var ex = q.querySelector('.explain'), v = ex.querySelector('.verdict');
+        v.textContent = ok ? v.dataset.right : v.dataset.wrong;
+        ex.classList.add(ok ? 'is-right' : 'is-wrong');
+        ex.hidden = false;
+        done++; if (ok) right++;
+        if (done === total) {
+          var sc = qz.querySelector('.quiz-score');
+          sc.textContent = qz.dataset.score.replace('{right}', right).replace('{total}', total);
+          sc.hidden = false;
+        }
+      });
+    });
+  });
+});
+document.querySelectorAll('.kmap').forEach(function (km) {
+  km.querySelectorAll('.kmap-tools button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      km.querySelectorAll('details.node').forEach(function (d) { d.open = b.dataset.act === 'open'; });
+    });
+  });
+  km.querySelectorAll('.ov-node').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var d = document.querySelector(a.getAttribute('href'));
+      if (d) d.open = true;
+    });
+  });
+});
 document.querySelectorAll('.lang-switch').forEach(function (a) {
   a.addEventListener('click', function () {
     try { localStorage.setItem('z2a-lang', a.dataset.lang); } catch (e) {}
